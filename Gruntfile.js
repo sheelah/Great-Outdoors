@@ -46,6 +46,10 @@ module.exports = function(grunt) {
       options: {
         banner: '<%= banner %>'
       },
+	  customizer: {
+	    src: 'js/customizer.js',
+	    dest: 'js/dist/customizer.min.js'
+      },
       dist: {
         files: [{
           expand: true,
