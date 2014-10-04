@@ -20,7 +20,8 @@ module.exports = function(grunt) {
             generatedImagesDir: 'images',
             javascriptsDir: 'js',
             outputStyle: 'compressed',
-            force: true
+            force: true,
+			importPath: 'bower_components/foundation/scss'
         }
       }
     },

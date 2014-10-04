@@ -12,18 +12,13 @@ Tags:
 
 This theme, like WordPress, is licensed under the GPL.
 
- Great Outdoors is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
-
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
+Great Outdoors is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 */
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-1.0 Reset
+1.0 Foundation
 2.0 Typography
 3.0 Elements
 4.0 Forms
@@ -47,9 +42,9 @@ and Blueprint http://www.blueprintcss.org/
 @import "mixins/mixins-master";
 
 /*--------------------------------------------------------------
-1.0 Reset
+1.0 Foundation
 --------------------------------------------------------------*/
-@import "reset";
+@import "foundation/app";
 
 /*--------------------------------------------------------------
 2.0 Typography
