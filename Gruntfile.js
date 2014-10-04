@@ -38,7 +38,7 @@ module.exports = function(grunt) {
         nonull: true,
       },
       dist: {
-        src: ['js/*.js'],
+        src: ['js/*.js', '!js/customizer.js'],
         dest: 'js/dist/greatoutdoors.js'
       }
 	},
