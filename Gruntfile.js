@@ -1,6 +1,12 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
+  // Load all grunt tasks.
+  require('load-grunt-tasks')(grunt);
+
+  // Show elapsed time.
+  require('time-grunt')(grunt);
+
   // Project configuration.
   grunt.initConfig({
     // Metadata.
@@ -23,6 +29,31 @@ module.exports = function(grunt) {
             force: true,
 			importPath: 'bower_components/foundation/scss'
         }
+      }
+    },
+    concat: {
+      options: {
+        banner: '<%= banner %>',
+        stripBanners: true,
+        nonull: true,
+      },
+      dist: {
+        src: ['js/*.js'],
+        dest: 'js/dist/greatoutdoors.js'
+      }
+	},
+    uglify: {
+      options: {
+        banner: '<%= banner %>'
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'js/dist',
+          src: ['greatoutdoors.js'],
+          dest: 'js/dist',
+          ext: '.min.js'
+        }]
       }
     },
     jshint: {
@@ -56,7 +87,7 @@ module.exports = function(grunt) {
         src: 'Gruntfile.js'
       },
       lib_test: {
-        src: ['js/**/*.js']
+        src: ['js/*.js']
       }
     },
     watch: {
@@ -81,11 +112,8 @@ module.exports = function(grunt) {
     },
   });
 
-  // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-
   // Default task.
   grunt.registerTask('default', ['watch']);
+  grunt.registerTask('build', ['concat', 'uglify']);
+  grunt.registerTask('lint', ['jshint']);
 };

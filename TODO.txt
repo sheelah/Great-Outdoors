@@ -1,0 +1,4 @@
+TODO's
+-Add boilerplate from index.html into WordPress templates and then delete it
+-Implement versioning via https://www.npmjs.org/package/grunt-version and use in 
+  wp_enqueue_scripts like Roots does
