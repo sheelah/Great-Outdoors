@@ -94,6 +94,30 @@ module.exports = function(grunt) {
         src: ['js/*.js']
       }
     },
+    browserSync: {
+      dev: {
+        bsFiles: {
+          src: [
+            '*.css',
+            '**/*.php',
+            'images/*.jpg',
+            'images/*.png',
+          ],
+        },
+        options: {
+          watchTask: true,
+          debugInfo: true,
+          logConnections: true,
+          notify: true,
+          proxy: "192.252.2.199/~sheelah/wordpress",
+          ghostMode: {
+            scroll: true,
+            links: true,
+            forms: true
+          }
+        }
+      }
+    },
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -117,7 +141,7 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['browserSync', 'watch']);
   grunt.registerTask('build', ['concat', 'uglify']);
   grunt.registerTask('lint', ['jshint']);
 };
