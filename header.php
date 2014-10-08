@@ -7,7 +7,7 @@
  * @package Great Outdoors
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +19,21 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div class="top-bar-container fixed contain-to-grid">
+	<nav class="top-bar">
+		<ul class="title-area">
+			<li class="name">
+				<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+			</li>
+			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+		</ul>
+		<section class="top-bar-section">
+			<?php foundation_top_bar_l(); ?>
+
+			<?php foundation_top_bar_r(); ?>
+		</section>
+	</nav>
+</div>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'great-outdoors' ); ?></a>
 
