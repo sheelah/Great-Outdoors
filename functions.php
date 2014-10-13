@@ -54,6 +54,9 @@ require get_template_directory() . '/inc/customizer.php';
 // Add theme support
 require_once('lib/functions/theme-support.php');
 
+// Remove dupe sticky class in WordPress and let Foundation use it
+require_once('lib/functions/remove-sticky-class.php');
+
 // Enqueue scripts and styles
 require_once('lib/functions/enqueue-scripts.php');
 

@@ -19,7 +19,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div class="top-bar-container fixed contain-to-grid">
+<div class="top-bar-container sticky contain-to-grid">
 	<nav class="top-bar">
 		<ul class="title-area">
 			<li class="name">

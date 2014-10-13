@@ -26,5 +26,3 @@ if ( ! function_exists( 'great_outdoors_scripts' ) ) :
     }
 endif; // great_outdoor_scripts
 add_action( 'wp_enqueue_scripts', 'great_outdoors_scripts' );
-
-?>

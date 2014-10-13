@@ -56,5 +56,3 @@ add_theme_support( 'custom-background', apply_filters( 'great_outdoors_custom_ba
 }
 endif; // great_outdoors_theme_support
 add_action( 'after_setup_theme', 'great_outdoors_theme_support' );
-
-?>

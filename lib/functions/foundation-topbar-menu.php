@@ -51,5 +51,3 @@ function foundation_top_bar_r() {
 		'walker' => new top_bar_walker()
 	));
 }
-
-?>
