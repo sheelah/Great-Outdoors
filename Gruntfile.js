@@ -1,6 +1,9 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
+  // Load JSON config
+  var appConfig = grunt.file.readJSON('app_config.json');
+
   // Load all grunt tasks.
   require('load-grunt-tasks')(grunt);
 
@@ -109,7 +112,7 @@ module.exports = function(grunt) {
           debugInfo: true,
           logConnections: true,
           notify: true,
-          proxy: "192.252.2.199/~sheelah/wordpress",
+          proxy: appConfig['proxy'],
           ghostMode: {
             scroll: true,
             links: true,
