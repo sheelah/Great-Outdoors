@@ -7,3 +7,10 @@
 5.2 Menus
 --------------------------------------------------------------*/
 @import "menus";
+
+@media screen and (min-width: 40.063em) {
+	.top-bar-section>ul>.divider,
+	.top-bar-section>ul[role="separator"] {
+		border-right: none;
+	}
+}

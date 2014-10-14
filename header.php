@@ -20,7 +20,7 @@
 
 <body <?php body_class(); ?>>
 <div class="top-bar-container sticky contain-to-grid">
-	<nav class="top-bar">
+	<nav class="top-bar" data-topbar role="navigation">
 		<ul class="title-area">
 			<li class="name">
 				<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
@@ -37,16 +37,12 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'great-outdoors' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
+	<header class="row" role="banner">
+		<div class="small-12 columns">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div>
+		</div><!-- .small-12 columns -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Primary Menu', 'great-outdoors' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+	</header><!-- #row -->
 
 	<div id="content" class="site-content">
