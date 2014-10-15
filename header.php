@@ -19,30 +19,24 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div class="top-bar-container sticky contain-to-grid">
-	<nav class="top-bar" data-topbar role="navigation">
-		<ul class="title-area">
-			<li class="name">
-				<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-			</li>
-			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-		</ul>
-		<section class="top-bar-section">
-			<?php foundation_top_bar_l(); ?>
-
-			<?php foundation_top_bar_r(); ?>
-		</section>
-	</nav>
-</div>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'great-outdoors' ); ?></a>
+	<header id="masthead" class="site-header" role="banner">
+		 <div class="top-bar-container contain-to-grid">
+			<nav class="top-bar" data-topbar role="navigation">
+				<ul class="title-area">
+					<li class="name">
+						<h1><a href="<?php echo esc_url( home_url( '/ ') ); ?>"><?php bloginfo('name'); ?></a></h1>
+					</li>
+					<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+				</ul>
+			 	<section class="top-bar-section">
+					<?php foundation_top_bar_l(); ?>
 
-	<header class="row" role="banner">
-		<div class="small-12 columns">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div><!-- .small-12 columns -->
-
-	</header><!-- #row -->
+					<?php foundation_top_bar_r(); ?>
+				</section>
+			</nav>
+		</div><!-- .top-bar-container -->
+	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
