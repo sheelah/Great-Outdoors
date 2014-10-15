@@ -121,6 +121,13 @@ module.exports = function(grunt) {
         }
       }
     },
+    phpdocumentor: {
+      dist: {
+        options: {
+          ignore: 'node_modules'
+        }
+      }
+    },
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -147,4 +154,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['browserSync', 'watch']);
   grunt.registerTask('build', ['concat', 'uglify']);
   grunt.registerTask('lint', ['jshint']);
+  grunt.registerTask('docs', ['phpdocumentor']);
 };
