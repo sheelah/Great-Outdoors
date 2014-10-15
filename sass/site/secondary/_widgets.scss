@@ -11,3 +11,9 @@
 .widget_search .search-submit {
 	display: none;
 }
+
+#secondary aside {
+	@media #{$medium-up} {
+		margin-left: 0.5em;
+	}
+}
