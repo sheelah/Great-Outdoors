@@ -37,6 +37,11 @@
 				</section>
 			</nav>
 		</div><!-- .top-bar-container -->
+		<div id="search-container" class="search-box-wrapper clearfix">
+			<div class="search-box">
+				<?php get_search_form(); ?>
+			</div><!-- .search-box -->
+		</div><!-- #search-container -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

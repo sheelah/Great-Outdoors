@@ -1,0 +1,36 @@
+/* Header search */
+.search-toggle {
+	color: #fff;
+	cursor: pointer;
+	&:hover,
+	&.active {
+		background: $topbar-link-bg-hover;
+	}
+}
+
+.search-box-wrapper {
+	display: none;
+	width: 100%;
+	z-index: 2;
+}
+.search-box {
+	background: rgb(91, 86, 86);
+	padding: 1em;
+	.search-field {
+		background-color: #fff;
+		border: 0;
+		box-sizing: border-box;
+		font-size: rem-calc(16);
+		padding: 1em;
+		margin: 0 auto;
+		max-width: 80%;
+		@media #{$medium-up} {
+			float: right;
+			max-width: 25%;
+			margin: 0;
+		}
+	}
+	.search-form {
+		overflow: hidden;
+	}
+}
