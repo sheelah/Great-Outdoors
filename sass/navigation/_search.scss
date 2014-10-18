@@ -38,7 +38,7 @@
 i.fa-search {
 	padding: 12px 0 12px 15px;
 	@media #{$medium-up} {
-		line-height: 45px;
+		line-height: $topbar-height;
 		padding: 0 15px;
 	}
 }

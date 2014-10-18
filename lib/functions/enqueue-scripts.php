@@ -8,7 +8,7 @@ if ( ! function_exists( 'great_outdoors_scripts' ) ) :
         wp_enqueue_style('great-outdoors-style', get_stylesheet_uri());
 
 		$font_base_url = '//fonts.googleapis.com/css';
-		$font_query = '?family=Lato:400,700|PT+Serif:400,700,400italic,700italic|Roboto+Slab:400';
+		$font_query = '?family=Lato:400,700|PT+Serif:400,700,400italic,700italic|Roboto+Slab:400|Oswald:400,700';
 		wp_enqueue_style('great-outdoors-google-fonts', $font_base_url . $font_query);
 
 		wp_enqueue_style('great-outdoors-font-awesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
