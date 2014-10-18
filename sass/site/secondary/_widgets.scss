@@ -16,4 +16,8 @@
 	@media #{$medium-up} {
 		margin-left: 0.5em;
 	}
+	li {
+		font-family: $header-font;
+		list-style: square;
+	}
 }

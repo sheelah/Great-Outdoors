@@ -128,6 +128,7 @@ $row-width: rem-calc(1170);
 // $body-bg: $white;
 // $body-font-color: $jet;
 // $body-font-family: $font-family-sans-serif;
+$body-font-family: $body-font;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
@@ -197,7 +198,9 @@ $row-width: rem-calc(1170);
 
 // We use these to control header font styles
 // $header-font-family: $body-font-family;
+$header-font-family: $header-font;
 // $header-font-weight: $font-weight-normal;
+$header-font-weight: bold;
 // $header-font-style: normal;
 // $header-font-color: $jet;
 // $header-line-height: 1.4;
@@ -234,6 +237,7 @@ $row-width: rem-calc(1170);
 
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
+$paragraph-font-family: $body-font;
 // $paragraph-font-weight: $font-weight-normal;
 // $paragraph-font-size: 1rem;
 // $paragraph-line-height: 1.6;
@@ -1372,6 +1376,7 @@ $row-width: rem-calc(1170);
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
 // $topbar-title-font-size: rem-calc(17);
+$topbar-title-font-size: rem-calc(24);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: $oil;
@@ -1389,6 +1394,7 @@ $row-width: rem-calc(1170);
 // $topbar-link-color-active-hover: $white;
 // $topbar-link-weight: $font-weight-normal;
 // $topbar-link-font-size: rem-calc(13);
+$topbar-link-font-size: rem-calc(16);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
 // $topbar-link-bg-color-hover: $charcoal;
@@ -1396,6 +1402,7 @@ $row-width: rem-calc(1170);
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
+$topbar-link-font-family: $top-nav-link-font;
 // $topbar-link-text-transform: none;
 // $topbar-link-padding: $topbar-height / 3;
 // $topbar-back-link-size: $h5-font-size;

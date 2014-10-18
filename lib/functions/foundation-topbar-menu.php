@@ -55,7 +55,8 @@ function foundation_top_bar_r() {
 add_filter( 'wp_nav_menu_items', 'great_outdoors_custom_menu_item', 10, 2 );
 function great_outdoors_custom_menu_item ( $items, $args ) {
 	if ($args->theme_location == 'top-bar-r') {
-		$items .= '<li class="search-toggle menu-item">Search';
+		$items .= '<li class="search-toggle menu-item">';
+		$items .= '		<i class="fa fa-search"></i>';
 		$items .= '		<a href="search-container" class="screen-reader-text"><?php _e( "Search", "great-outdoors" ); ?></a>';
 		$items .= '</li>';
 	}
