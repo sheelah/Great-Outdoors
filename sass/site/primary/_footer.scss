@@ -4,18 +4,6 @@ footer#colophon {
 	color: #fff;
 	padding: 1em 0;
 	font-size: rem-calc(14);
-	a {
-		@include single-transition(border-color, 0.3s);
-		text-decoration: none;
-		&:visited,
-		&:hover,
-		&:focus {
-			color: #fff;
-		&:hover {
-			border-bottom: 2px solid #fff;}
-			text-decoration: none;
-		}
-	}
 	p {
 		font-family: $footer-font;
 		margin: 1em 0;

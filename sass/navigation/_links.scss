@@ -7,6 +7,28 @@ a {
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color__link-hover;
+		color: $color__link;
+		text-decoration: underline;
+	}
+}
+footer#colophon {
+	a {
+		@include single-transition(border-color, 0.3s);
+		text-decoration: none;
+		&:visited,
+		&:hover,
+		&:focus {
+			color: #fff;
+			&:hover {
+				border-bottom: 2px solid #fff;
+			}
+			text-decoration: none;
+		}
+	}
+}
+
+.entry-content {
+	a {
+		text-decoration: underline;
 	}
 }

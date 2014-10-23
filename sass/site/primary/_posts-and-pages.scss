@@ -19,7 +19,7 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 0.5em 0 0;
 }
 
 .page-links {
@@ -29,4 +29,8 @@
 
 #content {
 	margin-top: 1em;
+}
+
+.entry-meta {
+	font-size: rem-calc(22);
 }
