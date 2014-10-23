@@ -10,3 +10,9 @@ textarea {
 @import "buttons";
 
 @import "fields";
+
+form,
+form p,
+form input {
+	font-family: $form-font;
+}

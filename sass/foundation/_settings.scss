@@ -442,6 +442,7 @@ $blockquote-border: 8px solid $gainsboro;
 // $button-margin-bottom: rem-calc(20);
 
 // We use these to control button text styles.
+$button-font-family: $header-font-family;
 // $button-font-family: $body-font-family;
 // $button-font-color: $white;
 // $button-font-color-alt: $oil;
@@ -627,6 +628,7 @@ $blockquote-border: 8px solid $gainsboro;
 
 // We use these to style the labels in different ways
 // $form-label-pointer: pointer;
+$form-label-font-size: rem-calc(16);
 // $form-label-font-size: rem-calc(14);
 // $form-label-font-weight: $font-weight-normal;
 // $form-label-line-height: 1.5;

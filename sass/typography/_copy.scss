@@ -46,7 +46,7 @@ pre {
 	padding: 1.6em;
 }
 
-code, kbd, tt, var {
+kbd, tt, var {
 	@include font-size(1.5);
 	font-family: $font__code;
 }
