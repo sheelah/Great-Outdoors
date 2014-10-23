@@ -12,6 +12,24 @@ dfn, cite, em, i {
 
 blockquote {
 	margin: 0 1.5em;
+	quotes: "\201C""\201D""\2018""\2019";
+	&:before, &:after {
+		content: open-quote;
+		font-size: 4em;
+		line-height: 0.1em;
+		margin-right: 0.25em;
+		vertical-align: -0.4em;
+	}
+	&:before {
+		content: "\201C";
+		position: relative;
+		left: -30px;
+	}
+	&:after {
+		content: "\201D";
+		position: relative;
+		right: 30px;
+	}
 }
 
 address {

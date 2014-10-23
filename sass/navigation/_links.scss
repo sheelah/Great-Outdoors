@@ -27,8 +27,10 @@ footer#colophon {
 	}
 }
 
-.entry-content {
-	a {
-		text-decoration: underline;
-	}
+.entry-content  a {
+	text-decoration: underline;
+}
+
+.top-bar-menu a:hover {
+	text-decoration: none;
 }
