@@ -12,6 +12,10 @@
 	display: none;
 }
 
+#secondary {
+	margin-top: 0.5em;
+}
+
 #secondary aside {
 	@media #{$medium-up} {
 		margin-left: 0.5em;

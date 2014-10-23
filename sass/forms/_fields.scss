@@ -54,3 +54,8 @@ textarea {
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 100%;
 }
+
+input[type="search"] {
+	font-size: rem-calc(16);
+	padding-left: 1em;
+}

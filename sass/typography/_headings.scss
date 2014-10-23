@@ -10,3 +10,11 @@ h1.widget-title {
 	text-transform: uppercase;
 	letter-spacing: rem-calc(1.2)
 }
+
+.entry-title {
+	letter-spacing: -(rem-calc(1.1));
+}
+
+.entry-content h2 {
+	letter-spacing: -(rem-calc(0.9));
+}
