@@ -11,8 +11,7 @@ dfn, cite, em, i {
 }
 
 blockquote {
-	margin: 0 1.5em;
-	quotes: "\201C""\201D""\2018""\2019";
+	margin-left: 1.5em;
 	&:before, &:after {
 		content: open-quote;
 		font-size: 4em;
