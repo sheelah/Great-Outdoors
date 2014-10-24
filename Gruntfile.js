@@ -32,6 +32,18 @@ module.exports = function(grunt) {
             force: true,
 			importPath: 'bower_components/foundation/scss'
         }
+      },
+      dev: {
+          options: {
+              sassDir: 'sass',
+              cssDir: '.',
+              imagesDir: 'images',
+              generatedImagesDir: 'images',
+              javascriptsDir: 'js',
+              outputStyle: 'expanded',
+              force: true,
+              importPath: 'bower_components/foundation/scss'
+          }
       }
     },
     concat: {
@@ -40,9 +52,9 @@ module.exports = function(grunt) {
         stripBanners: true,
         nonull: true,
       },
-      dist: {
+      js: {
         src: ['js/*.js', '!js/customizer.js'],
-        dest: 'js/dist/greatoutdoors.js'
+        dest: 'js/dist/greatoutdoors.min.js'
       }
 	},
     uglify: {
@@ -50,7 +62,7 @@ module.exports = function(grunt) {
         banner: '<%= banner %>'
       },
 	  customizer: {
-	    src: 'js/customizer.js',
+	    src: 'js/customizer.min.js',
 	    dest: 'js/dist/customizer.min.js'
       },
       dist: {
@@ -138,7 +150,7 @@ module.exports = function(grunt) {
       },
       sass: {
         files: ['sass/**/*.scss'],
-        tasks: ['compass'],
+        tasks: ['compass:dev'],
       },
       js: {
         files: ['js/*.js'],
@@ -151,8 +163,22 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', ['browserSync', 'watch']);
-  grunt.registerTask('build', ['concat', 'uglify']);
+  //grunt.registerTask('default', ['browserSync', 'watch']);
+  grunt.registerTask('default', ['dev']);
+  grunt.registerTask('dev', function (target) {
+      grunt.task.run([
+          'concat:js',
+          //'compass:dev',
+          'browserSync'
+      ]);
+
+      if (target === 'watch') {
+          return grunt.task.run([
+              'watch'
+          ]);
+      }
+  });
+  grunt.registerTask('build', ['concat:js', 'uglify:dist', 'compass:dist']);
   grunt.registerTask('lint', ['jshint']);
   grunt.registerTask('docs', ['phpdocumentor']);
 };
