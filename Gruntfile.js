@@ -62,17 +62,33 @@ module.exports = function(grunt) {
         banner: '<%= banner %>'
       },
 	  customizer: {
-	    src: 'js/customizer.min.js',
+	    src: 'js/customizer.js',
 	    dest: 'js/dist/customizer.min.js'
       },
       dist: {
-        files: [{
-          expand: true,
-          cwd: 'js/dist',
-          src: ['greatoutdoors.js'],
-          dest: 'js/dist',
-          ext: '.min.js'
-        }]
+        files: [
+          {
+            expand: true,
+            cwd: 'js/dist',
+            src: ['greatoutdoors.min.js'],
+            dest: 'js/dist',
+            ext: '.min.js'
+          },
+          /*{
+            expand: true,
+            cwd: 'js',
+            src: ['js/customizer.js'],
+            dest: 'js/dist',
+            ext: '.min.js'
+          }*/
+        ]
+      }
+    },
+    copy: {
+      dev: {
+        files: [
+          {src: ['js/customizer.js'], dest: 'js/dist/customizer.min.js'},
+        ]
       }
     },
     jshint: {
@@ -163,22 +179,9 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  //grunt.registerTask('default', ['browserSync', 'watch']);
   grunt.registerTask('default', ['dev']);
-  grunt.registerTask('dev', function (target) {
-      grunt.task.run([
-          'concat:js',
-          //'compass:dev',
-          'browserSync'
-      ]);
-
-      if (target === 'watch') {
-          return grunt.task.run([
-              'watch'
-          ]);
-      }
-  });
-  grunt.registerTask('build', ['concat:js', 'uglify:dist', 'compass:dist']);
+  grunt.registerTask('dev', ['concat:js', 'copy:dev', 'browserSync', 'watch']);
+  grunt.registerTask('build', ['concat:js', 'uglify', 'compass:dist']);
   grunt.registerTask('lint', ['jshint']);
   grunt.registerTask('docs', ['phpdocumentor']);
 };
