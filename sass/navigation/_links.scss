@@ -35,3 +35,12 @@ footer#colophon {
 .title-area a:hover {
 	text-decoration: none;
 }
+
+a.more-link {
+	font-family: $header-font;
+	font-weight: bold;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
