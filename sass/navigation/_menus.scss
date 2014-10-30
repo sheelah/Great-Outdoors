@@ -82,6 +82,14 @@
 .site-main .post-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
+	padding-bottom: 1.3em;
+	border-bottom: 1px solid $color__border;
+	font-family: $header-font-family;
+}
+
+.site-main .post-navigation a,
+.site-main .paging-navigation a {
+	font-weight: bold;
 }
 
 .comment-navigation .nav-previous,
@@ -97,4 +105,25 @@
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+
+.nav-indicator {
+	margin-bottom: 0.7em;
+}
+
+.page-numbers {
+	list-style: none;
+	font-family: $header-font-family;
+	font-weight: normal;
+	li {
+		display: inline;
+		margin: 0 0.4em;
+	}
+	.current {
+		font-weight: bold;
+	}
+
+a.page-numbers {
+	font-weight: normal;
+}
 }

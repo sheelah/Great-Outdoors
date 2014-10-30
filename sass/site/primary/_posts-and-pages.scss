@@ -5,7 +5,7 @@
 .hentry {
 	margin: 0 0 2em;
 	padding-bottom: 2em;
-	border-bottom: 1px solid rgb(238, 235, 235);
+	border-bottom: 1px solid $color__border;
 }
 
 .byline,
@@ -21,7 +21,7 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 0.5em 0 0;
+	margin: 1.5em 0 0;
 }
 
 .page-links {
@@ -41,6 +41,10 @@
 	font-weight: bold;
 }
 
+.entry-meta {
+	font-weight: 300;
+}
+
 .category-list {
 	font-weight: normal;
 }
@@ -54,6 +58,9 @@
 	border: none;
 	padding: 0;
 	margin: 0;
+	.fn {
+		font-weight: inherit;
+	}
 }
 
 .comments-link:before {

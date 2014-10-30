@@ -16,22 +16,44 @@ function great_outdoors_paging_nav() {
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
-	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'great-outdoors' ); ?></h1>
-		<div class="nav-links">
 
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'great-outdoors' ) ); ?></div>
-			<?php endif; ?>
+	$paged = get_query_var('paged') ? intval(get_query_var('paged')) : 1;
+	$pagenum_link = html_entity_decode(get_pagenum_link());
+	$query_args = array();
+	$url_parts = explode('?', $pagenum_link);
 
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'great-outdoors' ) ); ?></div>
-			<?php endif; ?>
+	if (isset($url_parts[1])) {
+		wp_parse_str($url_parts[1], $query_args);
+	}
 
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
+	$pagenum_link = remove_query_arg(array_keys($query_args), $pagenum_link);
+	$pagenum_link = trailingslashit($pagenum_link) . '%_%';
+
+	$format = $GLOBALS['wp_rewrite']->using_index_permalinks() && !strpos($pagenum_link, 'index.php') ? 'index.php/' : '';
+	$format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit('page/%#%', 'paged') : '?paged=%#%';
+
+	// Set up paginated links.
+	$links = paginate_links(array(
+		'base' => $pagenum_link,
+		'format' => $format,
+		'total' => $GLOBALS['wp_query']->max_num_pages,
+		'current' => $paged,
+		'mid_size' => 2,
+		'add_args' => array_map('urlencode', $query_args),
+		'prev_text' => __('&larr; Previous', 'great-outdoors'),
+		'next_text' => __('Next &rarr;', 'great-outdoors'),
+		'type' => 'list',
+	));
+
+
+	if ($links) :
+?>
+		<nav class="navigation paging-navigation" role="navigation">
+            <h1 class="screen-reader-text"><?php _e('Posts navigation', 'great-outdoors'); ?></h1>
+			<?php echo $links; ?>
+		</nav><!-- .navigation -->
 	<?php
+	endif;
 }
 endif;
 
@@ -52,8 +74,8 @@ function great_outdoors_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'great-outdoors' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'great-outdoors' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'great-outdoors' ) );
+				previous_post_link( '<div class="nav-previous"><div class="nav-indicator">' . __('Previous Post:', 'great-outdoors') . '</div>%link</div>', '%title');;
+				next_post_link(     '<div class="nav-next"><div class="nav-indicator">' . __('Next Post:', 'great-outdoors') . '</div>%link</div>', '%title');
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
