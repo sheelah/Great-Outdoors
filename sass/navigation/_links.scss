@@ -13,21 +13,20 @@ a {
 }
 footer#colophon {
 	a {
-		@include single-transition(border-color, 0.3s);
 		text-decoration: none;
 		&:visited,
 		&:hover,
 		&:focus {
 			color: #fff;
 			&:hover {
-				border-bottom: 2px solid #fff;
+				text-decoration: underline;
 			}
 			text-decoration: none;
 		}
 	}
 }
 
-.entry-content  a {
+.entry-content a {
 	text-decoration: underline;
 }
 
@@ -43,4 +42,9 @@ a.more-link {
 	&:hover {
 		text-decoration: underline;
 	}
+}
+
+.continue-reading a:visited,
+.entry-meta a:visited {
+		color: $color__link;
 }

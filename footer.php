@@ -15,7 +15,7 @@
 		<div class="row">
 			<div class="small-12 columns" data-equalizer-watch>
 				<p class="text-center">
-					&copy; <?php echo date('Y'); ?> <a href="http://sheelahb.com">Sheelah Brennan</a>
+					&copy; <?php echo date('Y'); ?> <a href="http://sheelahb.com">Sheelah Brennan</a>. All rights reserved.
 				</p>
 			</div><!-- .columns -->
 		</div><!-- .row -->

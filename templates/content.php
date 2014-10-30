@@ -11,12 +11,6 @@
 		if (is_sticky()) {
 			echo '<i class="fa fa-thumb-tack sticky-post"></i>';
 		}
-		/* translators: used between list items, there is a space after the comma */
-		$category_list = get_the_category_list(__(', ', 'great-outdoors'));
-
-		if (great_outdoors_categorized_blog() && !is_front_page() ) {
-			echo '<div class="category-list">' . $category_list . '</div>';
-		}
 		?>
 
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>

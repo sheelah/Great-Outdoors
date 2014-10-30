@@ -3,7 +3,9 @@
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 2em;
+	padding-bottom: 2em;
+	border-bottom: 1px solid rgb(238, 235, 235);
 }
 
 .byline,
@@ -31,8 +33,29 @@
 	margin-top: 1em;
 }
 
-.entry-meta {
-	font-size: rem-calc(18);
+.category-list,
+.entry-meta,
+.entry-footer {
+	font-size: rem-calc(16);
 	font-family: $header-font;
 	font-weight: bold;
+}
+
+.category-list {
+	font-weight: normal;
+}
+
+.entry-footer {
+	font-size: rem-calc(18);
+}
+
+.vcard {
+	display: inline;
+	border: none;
+	padding: 0;
+	margin: 0;
+	&:after {
+		content: ".";
+		margin-right: 0.2em;
+	}
 }

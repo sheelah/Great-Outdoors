@@ -4,6 +4,7 @@
 	/* Make sure select elements fit in widgets */
 	select {
 		max-width: 100%;
+		font-family: $header-font;
 	}
 }
 
@@ -23,6 +24,7 @@
 	li {
 		font-family: $header-font;
 		font-size: rem-calc(16);
-		list-style: square;
+		font-weight: bold;
+		list-style: none;
 	}
 }

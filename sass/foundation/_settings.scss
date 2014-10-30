@@ -276,6 +276,7 @@ $paragraph-font-family: $body-font;
 // We use these to style lists
 // $list-font-family: $paragraph-font-family;
 // $list-font-size: $paragraph-font-size;
+$list-line-height: 2;
 // $list-line-height: $paragraph-line-height;
 // $list-margin-bottom: $paragraph-margin-bottom;
 // $list-style-position: outside;
@@ -291,7 +292,7 @@ $paragraph-font-family: $body-font;
 // $blockquote-font-color: scale-color($header-font-color, $lightness: 35%);
 $blockquote-padding: rem-calc(9 20 0 40);
 // $blockquote-padding: rem-calc(9 20 0 19);
-$blockquote-border: 8px solid $gainsboro;
+$blockquote-border: none;
 // $blockquote-border: 1px solid $gainsboro;
 // $blockquote-cite-font-size: rem-calc(13);
 // $blockquote-cite-font-color: scale-color($header-font-color, $lightness: 23%);
