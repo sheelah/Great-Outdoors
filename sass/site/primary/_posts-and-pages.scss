@@ -45,8 +45,14 @@
 	font-weight: 300;
 }
 
-.category-list {
+.entry-footer {
+	margin-top: 2em;
+}
+
+.category-list ul,
+.tag-list ul {
 	font-weight: normal;
+	font-family: $header-font;
 }
 
 .entry-footer {
@@ -65,5 +71,5 @@
 
 .comments-link:before {
 	content: ". ";
-	margin-left: rem-calc(-2);
+	margin-left: rem-calc(-3);
 }

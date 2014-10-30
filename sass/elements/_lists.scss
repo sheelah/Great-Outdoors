@@ -23,3 +23,14 @@ dt {
 dd {
 	margin: 0 1.5em 1.5em;
 }
+
+.entry-footer {
+	ul {
+		list-style: none;
+		margin-left: 0;
+	}
+	li {
+		display: inline;
+		margin-right: 1em;
+	}
+}
