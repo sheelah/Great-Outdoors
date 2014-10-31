@@ -12,6 +12,7 @@
 </div><!-- .row -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<?php get_sidebar('footer'); ?>
 		<div class="row">
 			<div class="small-12 columns" data-equalizer-watch>
 				<p class="text-center">

@@ -12,24 +12,8 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
-
-/**
- * Register widget area.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
- */
-function great_outdoors_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'great-outdoors' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-}
-add_action( 'widgets_init', 'great_outdoors_widgets_init' );
+// Register sidebar widgets
+require_once( 'lib/functions/register-sidebars.php' );
 
 /**
  * Implement the Custom Header feature.
@@ -52,16 +36,16 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 // Add theme support
-require_once('lib/functions/theme-support.php');
+require_once( 'lib/functions/theme-support.php' );
 
 // Remove dupe sticky class in WordPress and let Foundation use it
-require_once('lib/functions/remove-sticky-class.php');
+require_once( 'lib/functions/remove-sticky-class.php' );
 
 // Enqueue scripts and styles
-require_once('lib/functions/enqueue-scripts.php');
+require_once( 'lib/functions/enqueue-scripts.php' );
 
 // Register all navigation menus
-require_once('lib/functions/foundation-topbar-menu.php');
+require_once( 'lib/functions/foundation-topbar-menu.php' );
 
 // Add menu walker
-require_once('lib/functions/foundation-menu-walker.php');
+require_once( 'lib/functions/foundation-menu-walker.php' );
