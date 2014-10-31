@@ -1,5 +1,0 @@
-TODO's
--Add boilerplate from index.html into WordPress templates and then delete it
--Add top nav bar using required walker
--Implement versioning via https://www.npmjs.org/package/grunt-version and use in
-  wp_enqueue_scripts like Roots does
