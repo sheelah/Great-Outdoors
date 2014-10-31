@@ -111,13 +111,17 @@
 	margin-bottom: 0.7em;
 }
 
+nav .page-numbers {
+	margin-left: 0;
+}
+
 .page-numbers {
 	list-style: none;
 	font-family: $header-font-family;
 	font-weight: normal;
 	li {
 		display: inline;
-		margin: 0 0.4em;
+		margin-right: 0.4em;
 	}
 	.current {
 		font-weight: bold;
