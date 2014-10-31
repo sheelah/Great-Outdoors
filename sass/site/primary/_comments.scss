@@ -4,3 +4,41 @@
 .bypostauthor {
 	display: block;
 }
+
+.reply {
+	font-family: $header-font;
+	font-weight: bold;
+	font-size: rem-calc(14);
+}
+
+#comments {
+	margin-top: 2.5em;
+}
+
+.comment-list article {
+	margin-top: 2em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid $color__border;
+}
+
+.comment-list article p {
+	font-size: rem-calc(16);
+}
+
+#comment-nav-above,
+#comment-nav-below {
+	border-bottom: none;
+}
+
+.comment-meta {
+	font-family: $header-font;
+	font-size: rem-calc(14);
+}
+
+.comment-author {
+	font-weight: bold;
+}
+
+.comment-metadata {
+	font-weight: 300;
+}
