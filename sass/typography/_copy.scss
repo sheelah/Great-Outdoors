@@ -11,19 +11,14 @@ blockquote, dfn, cite, em, i {
 }
 
 blockquote {
-	margin-left: 1.5em;
-	&:before {
-		content: open-quote;
-		font-size: 5em;
-		line-height: 0.1em;
-		margin-right: 0.25em;
-		vertical-align: -0.4em;
-	}
-	&:before {
-		content: "\201C";
-		position: relative;
-		left: -40px;
-		top: 10px;
+	border-top: 1px solid $gainsboro;
+	border-bottom: 1px solid $gainsboro;
+	padding: 2em 0;
+	margin: 3em 0;
+	p {
+		font-size: rem-calc(24);
+		margin-bottom: 0;
+		margin-left: 1.5em;
 	}
 }
 
