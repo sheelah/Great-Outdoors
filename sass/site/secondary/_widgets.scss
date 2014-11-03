@@ -15,6 +15,7 @@
 
 #secondary {
 	font-family: $aside-font;
+	padding-top: 0.5em;
 }
 
 #secondary aside {
@@ -28,7 +29,9 @@
 	li {
 		font-family: $header-font;
 		font-size: rem-calc(16);
-		font-weight: 600;
 		list-style: none;
+	}
+	a {
+		font-weight: 600;
 	}
 }
