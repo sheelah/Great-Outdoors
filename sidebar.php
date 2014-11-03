@@ -10,6 +10,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<div id="secondary" class="widget-area large-3 medium-4 columns sidebar" data-equalizer-watch role="complementary">
+<div id="secondary" class="widget-area sidebar large-3 medium-4 columns" role="complementary" data-equalizer-watch>
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </div><!-- #secondary -->

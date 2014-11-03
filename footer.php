@@ -8,13 +8,13 @@
  */
 ?>
 
-	</div><!-- #content -->
-</div><!-- .row -->
+	</div><!-- .row -->
+</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<?php get_sidebar('footer'); ?>
 		<div class="row">
-			<div class="small-12 columns" data-equalizer-watch>
+			<div class="small-12 columns">
 				<p class="text-center">
 					&copy; <?php echo date('Y'); ?> <a href="http://sheelahb.com">Sheelah Brennan</a>. All rights reserved.
 				</p>
