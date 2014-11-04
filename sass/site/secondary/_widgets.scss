@@ -8,24 +8,15 @@
 	}
 }
 
-/* Search widget */
-.widget_search .search-submit {
-	display: none;
-}
-
 .widget-title {
 	font-size: rem-calc(27);
 	border-bottom: 2px solid #222;
 	margin-bottom: 0.5em;
 }
 
-footer .widget-title {
-	border-bottom: 2px solid #fff;
-}
-
 #secondary {
 	font-family: $aside-font;
-	padding-top: 0.5em;
+	padding-top: 1em;
 }
 
 #secondary aside {
@@ -34,8 +25,7 @@ footer .widget-title {
 	}
 }
 
-#secondary aside,
-.footer-widgets {
+.widget {
 	li {
 		font-family: $header-font;
 		font-size: rem-calc(16);
@@ -43,5 +33,29 @@ footer .widget-title {
 	}
 	a {
 		font-weight: 600;
+	}
+}
+
+/* Widget-specific styles */
+.widget_rss li {
+	margin-bottom: 0.5em;
+}
+
+.widget_rss .rss-date,
+.widget_rss cite {
+	display: block;
+}
+
+.widget_search .search-submit {
+	display: none;
+}
+
+/* Footer-specific widget styles */
+#colophon {
+	.widget-title {
+		border-bottom: 2px solid $color__text-footer;
+	}
+	abbr[title] {
+		color: $color__text-footer;
 	}
 }

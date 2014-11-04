@@ -22,6 +22,10 @@ blockquote {
 	}
 }
 
+cite {
+	margin-top: 1em;
+}
+
 address {
 	margin: 0 0 1.5em;
 }
@@ -29,7 +33,6 @@ address {
 pre {
 	background: $color__background-pre;
 	font-family: $font__pre;
-	@include font-size(1.5);
 	line-height: $font__line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -38,7 +41,6 @@ pre {
 }
 
 kbd, tt, var {
-	@include font-size(1.5);
 	font-family: $font__code;
 }
 

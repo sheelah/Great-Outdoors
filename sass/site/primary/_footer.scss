@@ -1,7 +1,7 @@
 /* Footer styles */
 footer#colophon {
-	background-color: #333;
-	color: #fff;
+	background-color: $color__background-footer;
+	color: $color__text-footer;
 	padding: 2em;
 	p {
 		font-family: $footer-font;
@@ -9,6 +9,6 @@ footer#colophon {
 		font-size: rem-calc(14);
 	}
 	.widget-title {
-		color: #fff;
+		color: $color__text-footer;
 	}
 }
