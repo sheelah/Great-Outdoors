@@ -42,7 +42,14 @@
 }
 
 .entry-meta {
-	font-weight: 300;
+	font-weight: normal;
+	a, .vcard a {
+		font-weight: bold;
+	}
+}
+
+.entry-header {
+	position: relative;
 }
 
 .entry-footer {
@@ -72,4 +79,10 @@
 .comments-link:before {
 	content: ". ";
 	margin-left: rem-calc(-3);
+}
+
+.sticky-post {
+	position: absolute;
+	top: 1em;
+	right: 3em;
 }

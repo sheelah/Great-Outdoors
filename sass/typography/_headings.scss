@@ -5,14 +5,4 @@ h1, h2, h3, h4, h5, h6 {
 .title-area h1 {
 	font-family: $top-nav-title-font;
 	text-transform: uppercase;
-	letter-spacing: rem-calc(1.2)
-}
-
-.entry-title,
-.page-title {
-	letter-spacing: -(rem-calc(1.1));
-}
-
-.entry-content h2 {
-	letter-spacing: -(rem-calc(0.9));
 }

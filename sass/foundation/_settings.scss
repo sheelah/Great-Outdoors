@@ -79,7 +79,7 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-grid-classes: $include-html-classes;
 // $include-xl-html-grid-classes: false;
 
-$row-width: rem-calc(1170);
+$row-width: rem-calc(1280);
 // $row-width: rem-calc(1000);
 // $total-columns: 12;
 // $column-gutter: rem-calc(30);
@@ -200,7 +200,7 @@ $body-font-family: $body-font;
 // $header-font-family: $body-font-family;
 $header-font-family: $header-font;
 // $header-font-weight: $font-weight-normal;
-$header-font-weight: bold;
+$header-font-weight: 800;
 // $header-font-style: normal;
 // $header-font-color: $jet;
 // $header-line-height: 1.4;
