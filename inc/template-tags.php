@@ -194,6 +194,20 @@ function great_outdoors_custom_category_list() {
 }
 endif;
 
+if ( ! function_exists( 'great_outdoors_create_primary_column' ) ) :
+/**
+ * Create the main column in foundation, with width depending on whether the sidebar is active.
+ *
+ */
+function great_outdoors_create_primary_column() {
+	$column = '<div class="large-9 medium-8 columns" data-equalizer-watch>';
+	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+		$column = '<div class="small-12 columns">';
+	}
+	return $column;
+	}
+endif;
+
 /**
  * Flush out the transients used in great_outdoors_categorized_blog.
  */

@@ -14,7 +14,7 @@
 get_header(); ?>
 
 	<div class="row" data-equalizer>
-		<div class="large-9 medium-8 columns" data-equalizer-watch>
+		<?php echo great_outdoors_create_primary_column(); ?>
 			<div id="primary" class="content-area">
 				<main id="main" class="site-main" role="main">
 
