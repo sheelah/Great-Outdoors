@@ -21,7 +21,20 @@ blockquote {
 		margin-left: 1.5em;
 	}
 	cite {
-		margin-top: 1em;
+		margin-top: 1.5em;
+		text-align: right;
+	}
+	&.alignleft,
+	&.alignright {
+		width: 50%;
+		margin-right: 2em;
+		p {
+			margin: 0 1.5em;
+		}
+	}
+	&.alignright {
+		margin-left: 2em;
+		margin-right: 0;
 	}
 }
 
