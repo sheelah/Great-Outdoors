@@ -1,19 +1,9 @@
-ul, ol {
-	margin: 0 0 1.5em 1em;
-}
-
 ul {
 	list-style: disc;
 }
 
 ol {
 	list-style: decimal;
-}
-
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
 }
 
 dt {
