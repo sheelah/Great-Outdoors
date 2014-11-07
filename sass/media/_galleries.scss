@@ -5,13 +5,10 @@
 .gallery-item {
 	display: inline-block;
 	text-align: center;
-	vertical-align: top;
+	//vertical-align: top;
 	width: 100%;
 	position: relative;
 	margin-bottom: 1.5em;
-	.wp-caption-text {
-		margin: 0;
-	}
 }
 
 .gallery-columns-2 .gallery-item {
@@ -47,19 +44,34 @@
 }
 
 .gallery-caption {
-	@include single-transition(opacity 0.3s);
+	@include single-transition(all 0.3s);
 	font-size: rem-calc(12);
 	opacity: 0;
 	position: absolute;
 	bottom: 0;
-	left: 0;
+	width: 100%;
 	color: white;
-	background: rgba(0, 0, 0, 0.70);
-}
+	max-height: 50%;
+	padding: 6px 8px;
+	}
 
 .gallery-item:hover .gallery-caption {
 	opacity: 1;
+	background: rgba(0, 0, 0, 0.70);
 }
 
+.wp-caption-text {
+	text-align: center;
+}
 
+.site-main .gallery a img {
+	border: none;
+	display: block;
+	height: auto;
+	margin: 0 auto;
+	max-width: 100%;
+}
 
+.gallery figcaption {
+	margin: 0;
+}
