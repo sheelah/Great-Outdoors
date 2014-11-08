@@ -15,14 +15,30 @@
 	margin-top: 2.5em;
 }
 
-.comment-list article {
-	margin-top: 2em;
-	padding-bottom: 1em;
-	border-bottom: 1px solid $gainsboro;
+.comments-area > ol {
+	padding: 0;
+	margin: 2em 0;
+	list-style-type: none;
 }
 
-.comment-list article p {
-	font-size: rem-calc(16);
+ol.children {
+	list-style-type: none;
+}
+
+.comment-list,
+.children {
+	line-height: inherit;
+}
+
+.comment-list {
+	article {
+		margin-top: 2em;
+		padding-bottom: 1em;
+		border-bottom: 1px solid $gainsboro;
+	}
+	article p {
+		font-size: rem-calc(16);
+	}
 }
 
 #comment-nav-above,
@@ -33,10 +49,17 @@
 .comment-meta {
 	font-family: $header-font;
 	font-size: rem-calc(14);
+	margin-bottom: 1.5em;
 }
 
-.comment-author {
-	font-weight: bold;
+.comment-author,
+.comment-author .fn {
+	font-weight: 700;
+	font-size: rem-calc(18);
+	.avatar {
+		float: left;
+		margin-right: 1em;
+	}
 }
 
 .comment-form p {
