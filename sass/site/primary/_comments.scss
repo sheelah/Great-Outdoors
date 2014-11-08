@@ -3,6 +3,12 @@
 }
 .bypostauthor {
 	display: block;
+	> .comment-body {
+		padding: 1em;
+		margin-bottom: 2em;
+		background: $gainsboro;
+		border: none;
+	}
 }
 
 .reply {
@@ -64,4 +70,13 @@ ol.children {
 
 .comment-form p {
 	font-size: rem-calc(16);
+}
+
+p.comment-awaiting-moderation {
+	background: $success-color;
+	font-family: $header-font;
+	color: $white;
+	margin: 0.5em;
+	margin-left: 0;
+	padding: 0.5em;
 }
