@@ -74,13 +74,6 @@ module.exports = function(grunt) {
             dest: 'js/dist',
             ext: '.min.js'
           },
-          /*{
-            expand: true,
-            cwd: 'js',
-            src: ['js/customizer.js'],
-            dest: 'js/dist',
-            ext: '.min.js'
-          }*/
         ]
       }
     },

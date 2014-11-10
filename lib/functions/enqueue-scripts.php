@@ -17,9 +17,10 @@ if ( ! function_exists( 'great_outdoors_scripts' ) ) :
         if (!is_admin()) {
             wp_deregister_script('jquery');
 
-            wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null);
+            wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
         }
         // Enqueue concatenated and minified JS
+		wp_enqueue_script('picturefill', get_template_directory_uri() . '/js/lib/picturefill.min.js', array(), null);
         wp_enqueue_script('modernizr', get_template_directory_uri() . '/bower_components/modernizr/modernizr.js', array(), null, true);
 
         wp_enqueue_script('foundation', get_template_directory_uri() . '/bower_components/foundation/js/foundation.min.js', array('jquery'), null, true);
