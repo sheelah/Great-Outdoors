@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
+	$content_width = 1450; /* pixels */
 }
 
 // Register sidebar widgets
@@ -37,6 +37,9 @@ require get_template_directory() . '/inc/customizer.php';
 
 // Add theme support
 require_once( 'lib/functions/theme-support.php' );
+
+// Add responsive images functionality
+require_once( 'lib/functions/responsive-images.php' );
 
 // Remove dupe sticky class in WordPress and let Foundation use it
 require_once( 'lib/functions/remove-sticky-class.php' );

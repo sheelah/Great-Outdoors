@@ -6,6 +6,7 @@ if ( ! function_exists( 'great_outdoors_theme_support' ) ) :
 * Note that this function is hooked into the after_setup_theme hook, which
 * runs before the init hook. The init hook is too late for some features, such
 * as indicating support for post thumbnails.
+* Note: the after_setup_theme hook runs at every page load.
 */
 function great_outdoors_theme_support() {
 
@@ -25,12 +26,8 @@ add_theme_support( 'automatic-feed-links' );
 *
 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 */
-//add_theme_support( 'post-thumbnails' );
-
-// This theme uses wp_nav_menu() in one location.
-//register_nav_menus( array(
-//	'primary' => __( 'Primary Menu', 'great-outdoors' ),
-//) );
+add_theme_support( 'post-thumbnails' );
+add_image_size( 'small-thumb', 475, 9999 );
 
 /*
 * Switch default core markup for search form, comment form, and comments
@@ -56,3 +53,32 @@ add_theme_support( 'custom-background', apply_filters( 'great_outdoors_custom_ba
 }
 endif; // great_outdoors_theme_support
 add_action( 'after_setup_theme', 'great_outdoors_theme_support' );
+
+if ( ! function_exists( 'great_outdoors_enforce_image_size_options' ) ) :
+/**
+ * Sets up theme defaults for image sizes using the switch_theme hook.
+ *
+ * Note: The switch_theme hook runs only after a theme is activated.
+ */
+function great_outdoors_enforce_image_size_options() {
+	$image_sizes = array(
+		'thumb_size_w' => 250,  // tiniest thumbnail; for post index listings
+		'thumb_size_h' => 350,
+		'medium_size_w' => 800, // bigger screens and tablets
+		'medium_size_h' => 9999,
+		'large_size_w' => 1450, // desktop screens; for post featured image on largest screens
+		'large_size_h' => 700,
+	);
+
+	update_option( 'thumbnail_size_w', $image_sizes['thumb_size_w'] );
+	update_option( 'thumbnail_size_h', $image_sizes['thumb_size_h'] );
+	update_option( 'thumbnail_crop', 1 );
+	update_option( 'medium_size_w', $image_sizes['medium_size_w'] );
+	update_option( 'medium_size_h', $image_sizes['medium_size_h'] );
+	update_option( 'large_size_w', $image_sizes['large_size_w'] );
+	update_option( 'large_size_h', $image_sizes['large_size_h'] );
+	update_option( 'large_crop', 1 );
+}
+endif;
+add_action( 'switch_theme', 'great_outdoors_enforce_image_size_options' );
+
