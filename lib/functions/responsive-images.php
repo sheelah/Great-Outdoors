@@ -37,11 +37,11 @@ if ( ! function_exists( 'great_outdoors_responsive_insert_header_image' ) ) :
 
 		return
 		'<div class="featured-image">'
-		. '<div class="gradient-overlay">'
+//		. '<div class="gradient-overlay">'
     	. '<img sizes="100vw" srcset="'
 		. $srcsets . '" alt="'
 		. great_outdoors_get_img_alt( $image )
-		. '"></div></div>';
+		. '"></div>';
 	}
 endif;
 

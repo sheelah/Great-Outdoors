@@ -31,6 +31,7 @@
 
 #content {
 	margin-top: 2em;
+	background: $white;
 }
 
 #page {
@@ -95,31 +96,66 @@
 	width: 100%;
 	top: 0;
 	left: 0;
-	z-index: -200;
+	z-index: -100;
+	background: $white;
 }
 
 // Gradient overlay on top of featured image header in single post view
 .gradient-overlay {
-	content: '';
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: #000;
-	opacity: 0.3;
-	z-index: -100;
+//	position: fixed;
+//	top: 0;
+//	right: 0;
+//	bottom: 0;
+//	left: 0;
+//	background-color: #000;
+//	opacity: 0.3;
+//	z-index: -100;
 }
 
-.featured-image ~ .row .entry-header {
+.featured-image + .row {
 	position: relative;
 	z-index: 10;
-	top: 0;
+	bottom: 100px;
 	width: 100%;
-	padding-top: 4em;
+	height: 100%;
+	margin-top: 85%;
+	@media only screen and (min-width: 31.25em) {
+		bottom: 50px;
+	}
+	@media #{$medium} {
+		margin-top: 50%;
+		top: 0;
+		bottom: inherit;
+	}
+	@media #{$large-up} {
+		margin-top: 40%;
+		top: 0;
+		bottom: inherit;
+	}
 }
 
-.featured-image ~ .row .entry-content {
-	margin-top: 60%;
-	background: #fff;
+.single-post .has-post-thumbnail .entry-header {
+	position: relative;
+	bottom: 130px;
+	color: #fff;
+	@media only screen and (min-width: 31.25em) {
+		bottom: 180px;
+	}
+	@media #{$medium} {
+		bottom: 225px;
+	}
+	@media #{$large-up}	{
+		bottom: 300px;
+	}
+	.entry-meta a {
+		color: #fff;
+	}
+}
+
+.single-post .has-post-thumbnail .entry-title {
+	color: #fff;
+}
+
+.single-post .has-post-thumbnail .entry-content {
+	margin-top: 0;
 }
