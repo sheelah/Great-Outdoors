@@ -102,14 +102,14 @@
 
 // Gradient overlay on top of featured image header in single post view
 .gradient-overlay {
-//	position: fixed;
-//	top: 0;
-//	right: 0;
-//	bottom: 0;
-//	left: 0;
-//	background-color: #000;
-//	opacity: 0.3;
-//	z-index: -100;
+	position: relative;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.3);
+	img {
+		position: relative;
+		z-index: -10;
+	}
 }
 
 .featured-image + .row {
@@ -124,13 +124,15 @@
 	}
 	@media #{$medium} {
 		margin-top: 50%;
-		top: 0;
-		bottom: inherit;
+		bottom: 100px;
+	}
+	@media only screen and (min-width: 62.5em) {
+		margin-top: 50%;
+		bottom: 50px;
 	}
 	@media #{$large-up} {
 		margin-top: 40%;
-		top: 0;
-		bottom: inherit;
+		bottom: 20px;
 	}
 }
 
@@ -139,13 +141,13 @@
 	bottom: 130px;
 	color: #fff;
 	@media only screen and (min-width: 31.25em) {
-		bottom: 180px;
+		bottom: 300px;
 	}
 	@media #{$medium} {
-		bottom: 225px;
+		bottom: 100px;
 	}
 	@media #{$large-up}	{
-		bottom: 300px;
+		bottom: 250px;
 	}
 	.entry-meta a {
 		color: #fff;
