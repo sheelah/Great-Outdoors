@@ -27,7 +27,7 @@ add_theme_support( 'automatic-feed-links' );
 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 */
 add_theme_support( 'post-thumbnails' );
-add_image_size( 'small-thumb', 475, 9999 );
+add_image_size( 'small-thumb', 500, 9999 );
 
 /*
 * Switch default core markup for search form, comment form, and comments
@@ -67,7 +67,7 @@ function great_outdoors_enforce_image_size_options() {
 		'medium_size_w' => 800, // bigger screens and tablets
 		'medium_size_h' => 9999,
 		'large_size_w' => 1450, // desktop screens; for post featured image on largest screens
-		'large_size_h' => 700,
+		'large_size_h' => 600,
 	);
 
 	update_option( 'thumbnail_size_w', $image_sizes['thumb_size_w'] );

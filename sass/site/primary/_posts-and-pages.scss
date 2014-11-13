@@ -109,6 +109,7 @@
 	img {
 		position: relative;
 		z-index: -10;
+		width: 100%;
 	}
 }
 
@@ -118,46 +119,57 @@
 	bottom: 100px;
 	width: 100%;
 	height: 100%;
-	margin-top: 85%;
-	@media only screen and (min-width: 31.25em) {
-		bottom: 50px;
+	margin-top: 65%;
+	@media only screen and (min-width: 25em) {
+		margin-top: 35%;
 	}
-	@media #{$medium} {
-		margin-top: 50%;
-		bottom: 100px;
-	}
-	@media only screen and (min-width: 62.5em) {
-		margin-top: 50%;
-		bottom: 50px;
-	}
-	@media #{$large-up} {
-		margin-top: 40%;
-		bottom: 20px;
+	#secondary {
+		// Move sidebar down to accomodate featured image if sidebar is enabled
+		padding-top: 9em;
 	}
 }
 
-.single-post .has-post-thumbnail .entry-header {
-	position: relative;
-	bottom: 130px;
+.has-post-thumbnail .entry-header {
+	position: absolute;
+	top: -100px;
 	color: #fff;
+	@media only screen and (min-width: 25em) {
+		top: -40px;
+	}
 	@media only screen and (min-width: 31.25em) {
-		bottom: 300px;
+		top: -80px;
 	}
 	@media #{$medium} {
-		bottom: 100px;
+		max-width: 75%;
+		top: -100px;
 	}
-	@media #{$large-up}	{
-		bottom: 250px;
+	@media #{$large} {
+		max-width: 70%;
+		top: -180px;
+	}
+	@media #{$xlarge-up} {
+		max-width: 65%;
+		top: -250px;
 	}
 	.entry-meta a {
 		color: #fff;
 	}
 }
 
-.single-post .has-post-thumbnail .entry-title {
+.has-post-thumbnail .entry-title {
+	font-size: rem-calc(22);
 	color: #fff;
+	@media #{$medium} {
+		font-size: rem-calc(40);
+	}
+	@media #{$large-up} {
+		font-size: rem-calc(46)
+	}
 }
 
-.single-post .has-post-thumbnail .entry-content {
-	margin-top: 0;
+.has-post-thumbnail .entry-content {
+	margin-top: 8em;
+	@media #{$large-up} {
+		margin-top: 10em;
+	}
 }
