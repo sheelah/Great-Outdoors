@@ -182,7 +182,7 @@ if ( ! function_exists( 'great_outdoors_create_primary_column' ) ) :
  *
  */
 function great_outdoors_create_primary_column() {
-	$column = '<div class="large-9 medium-8 columns" data-equalizer-watch>';
+	$column = '<div class="medium-8 columns" data-equalizer-watch>';
 	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		$column = '<div class="small-12 columns">';
 	}
