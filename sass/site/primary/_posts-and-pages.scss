@@ -18,6 +18,11 @@
 	display: inline;
 }
 
+article {
+	// Fix issue with non-clearing floats within articles with floated content like images
+	@include clearfix();
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
@@ -31,6 +36,7 @@
 
 #content {
 	margin-top: 2em;
+	margin-bottom: 2em;
 	background: $white;
 }
 
@@ -44,6 +50,10 @@
 	font-size: rem-calc(16);
 	font-family: $header-font;
 	font-weight: bold;
+}
+
+.entry-meta {
+	margin-top: 0.5em;
 }
 
 .entry-header {
@@ -61,10 +71,6 @@
 	font-family: $header-font;
 }
 
-.entry-footer {
-	font-size: rem-calc(18);
-}
-
 .vcard {
 	display: inline;
 	border: none;
@@ -72,6 +78,7 @@
 	margin: 0;
 	.fn {
 		font-weight: inherit;
+		font-size: rem-calc(16);
 	}
 }
 
@@ -126,7 +133,8 @@
 	}
 }
 
-.has-post-thumbnail .entry-header {
+.single .has-post-thumbnail .entry-header,
+.page .has-post-thumbnail .entry-header {
 	position: absolute;
 	top: -100px;
 	color: $white;
@@ -154,7 +162,8 @@
 	}
 }
 
-.has-post-thumbnail .entry-title {
+.single .has-post-thumbnail .entry-title,
+.page .has-post-thumbnail .entry-title {
 	font-size: rem-calc(22);
 	color: #fff;
 	@media #{$medium} {
@@ -165,7 +174,8 @@
 	}
 }
 
-.has-post-thumbnail .entry-content {
+.single .has-post-thumbnail .entry-content,
+.page .has-post-thumbnail .entry-content {
 	margin-top: 8em;
 	@media #{$large-up} {
 		margin-top: 10em;
