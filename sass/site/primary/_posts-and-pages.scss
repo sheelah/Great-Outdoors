@@ -23,6 +23,11 @@ article {
 	@include clearfix();
 }
 
+.home article {
+	// No bottom border on static home page
+	border-bottom: none;
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
