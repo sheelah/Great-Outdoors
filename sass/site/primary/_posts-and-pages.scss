@@ -46,16 +46,13 @@
 	font-weight: bold;
 }
 
-.entry-meta {
-	font-weight: normal;
-}
-
 .entry-header {
 	position: relative;
 }
 
 .entry-footer {
 	margin-top: 2em;
+	line-height: 2.5;
 }
 
 .category-list ul,
@@ -132,7 +129,7 @@
 .has-post-thumbnail .entry-header {
 	position: absolute;
 	top: -100px;
-	color: #fff;
+	color: $white;
 	@media only screen and (min-width: 25em) {
 		top: -40px;
 	}
@@ -151,8 +148,9 @@
 		max-width: 65%;
 		top: -250px;
 	}
-	.entry-meta a {
-		color: #fff;
+	.entry-meta a,
+	.category-list a{
+		color: $white;
 	}
 }
 

@@ -176,24 +176,6 @@ function great_outdoors_categorized_blog() {
 	}
 }
 
-if ( ! function_exists( 'great_outdoors_custom_category_list' ) ) :
-	/**
-	 * Returns string containing a custom styled HTML unordered list of categories for a given post.
-	 */
-function great_outdoors_custom_category_list() {
-	$categories = wp_get_post_categories(get_the_ID());
-	$list = '<ul>';
-	foreach ( $categories as $c ) {
-		$cat = get_category ( $c );
-		//echo '<li>' . $cat->name . '</li>';
-		$list .= '<li><i class="fa fa-inbox"></i>'
-			. '<a href="' . esc_url( get_category_link( $cat->term_id ) ) . '" ' .  '>' . $cat->name.'</a></li>';
-	}
-	$list .= '</ul>';
-	return $list;
-}
-endif;
-
 if ( ! function_exists( 'great_outdoors_create_primary_column' ) ) :
 /**
  * Create the main column in foundation, with width depending on whether the sidebar is active.

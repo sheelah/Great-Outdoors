@@ -10,16 +10,6 @@
 
 		<div class="entry-meta">
 			<?php great_outdoors_posted_on(); ?>
-			<?php
-			if (!post_password_required() && ( comments_open() || '0' != get_comments_number() )) {
-				echo '<span class="comments-link">';
-				comments_popup_link(
-					__('Leave a comment', 'great-outdoors'),
-					__('1 Comment', 'great-outdoors'),
-					__('% Comments', 'great-outdoors'));
-				echo '</span>';
-			}
-			?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
@@ -35,16 +25,17 @@
 
 	<footer class="entry-footer">
 		<?php
-		if (great_outdoors_categorized_blog()) {
-			echo '<div class="category-list">';
+		/* translators: used between list items, there is a space after the comma */
+		$category_list = get_the_category_list(__(', ', 'great-outdoors'));
 
-			echo great_outdoors_custom_category_list();
+		if (great_outdoors_categorized_blog()) {
+			echo '<div class="category-list">' . '<i class="fa fa-folder-open"></i>' . $category_list . '</div>';
 		}
 		?>
-		</div><!-- .category-list -->
+
 		<div class="tag-list">
 		<?php
-		echo get_the_tag_list('<ul><li><i class="fa fa-tag"></i>', '</li><li><i class="fa fa-tag"></i>', '</li></ul>');
+		echo get_the_tag_list('<i class="fa fa-tag"></i>', ', ', '');
 		?>
 		</div><!-- .tag-list -->
 		<?php edit_post_link( __( 'Edit', 'great-outdoors' ), '<span class="edit-link">', '</span>' ); ?>
