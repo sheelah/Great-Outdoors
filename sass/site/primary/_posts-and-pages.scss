@@ -186,3 +186,12 @@ article {
 		margin-top: 10em;
 	}
 }
+
+.index-post-listing {
+	@include grid-row();
+	margin-top: 2em;
+}
+
+.index-thumbnail-image {
+	padding-top: 0.8em;
+}

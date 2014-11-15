@@ -82,7 +82,6 @@
 .site-main .post-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
-	padding-bottom: 2.3em;
 	border-bottom: 1px solid $gainsboro;
 	font-family: $header-font-family;
 }
@@ -113,6 +112,12 @@
 
 nav .page-numbers {
 	margin-left: 0;
+	padding: 1em 0 0 0;
+	text-align: center;
+}
+
+nav .paging-navigation {
+	padding: 1em 0 0 0;
 }
 
 .page-numbers {

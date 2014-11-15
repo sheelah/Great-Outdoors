@@ -4,7 +4,19 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('index-post-listing'); ?>>
+
+	<div class="hide-for-small-only medium-4 columns">
+	<?php if ( has_post_thumbnail() ) {
+		echo '<a href="' . get_permalink() . '" title="'.  __('Click to read ', 'great-outdoors') . get_the_title()
+			. '" rel="bookmark">';
+		echo the_post_thumbnail( 'thumbnail', 'class=index-thumbnail-image' );
+		echo '</a>';
+	}
+	?>
+	</div><!-- .columns -->
+
+	<div class="medium-8 columns">
 	<header class="entry-header">
 		<?php
 		// Display a thumb tack in the top right hand corner if this post is sticky
@@ -13,7 +25,7 @@
 		}
 		?>
 
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
@@ -56,4 +68,5 @@
 		</footer><!-- .entry-footer -->
 	<?php } ?>
 
+</div><!-- .columns -->
 </article><!-- #post-## -->
