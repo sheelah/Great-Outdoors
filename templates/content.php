@@ -6,7 +6,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('index-post-listing'); ?>>
 
-	<div class="hide-for-small-only medium-4 columns">
+	<div class="hide-for-small-only medium-4 large-3 large-push-1 columns">
 	<?php if ( has_post_thumbnail() ) {
 		echo '<a href="' . get_permalink() . '" title="'.  __('Click to read ', 'great-outdoors') . get_the_title()
 			. '" rel="bookmark">';
