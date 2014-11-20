@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Foo Page
+ * Template for static front page
  *
  * @package Great Outdoors
  */

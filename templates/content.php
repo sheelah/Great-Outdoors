@@ -17,7 +17,7 @@
 	</div><!-- .columns -->
 
 	<div class="medium-8 columns">
-	<header class="entry-header">
+		<header class="entry-header">
 		<?php
 		// Display a thumb tack in the top right hand corner if this post is sticky
 		if (is_sticky()) {
@@ -41,7 +41,7 @@
 				<?php edit_post_link(__('Edit', 'great-outdoors'), '<span class="edit-link">', '</span>'); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
-	</header><!-- .entry-header -->
+		</header><!-- .entry-header -->
 
 	<?php
 	if ( $wp_query->current_post == 0 && !is_paged() && is_front_page() ) {
@@ -68,5 +68,5 @@
 		</footer><!-- .entry-footer -->
 	<?php } ?>
 
-</div><!-- .columns -->
+	</div><!-- .columns -->
 </article><!-- #post-## -->
