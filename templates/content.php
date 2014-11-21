@@ -8,10 +8,10 @@
 
 	<div class="hide-for-small-only medium-4 large-3 large-push-1 columns">
 	<?php if ( has_post_thumbnail() ) {
-//		echo '<a href="' . get_permalink() . '" title="'.  __('Click to read ', 'great-outdoors') . get_the_title()
-//			. '" rel="bookmark">';
-//		echo the_post_thumbnail( 'thumbnail', 'class=index-thumbnail-image' );
-//		echo '</a>';
+		echo '<a href="' . get_permalink() . '" title="'.  __('Click to read ', 'great-outdoors') . get_the_title()
+			. '" rel="bookmark">';
+		echo the_post_thumbnail( 'thumbnail', 'class=index-thumbnail-image' );
+		echo '</a>';
 	}
 	?>
 	</div><!-- .columns -->
