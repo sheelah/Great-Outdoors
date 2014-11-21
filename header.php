@@ -48,3 +48,11 @@
 		<?php if ( is_singular(array('post', 'page')) && has_post_thumbnail( $post->ID ) ):
 			echo great_outdoors_responsive_insert_header_image( get_post_thumbnail_id ($post->ID ) );
 		endif; ?>
+		<?php
+		$latest = get_posts("post_type=post&numberposts=1");
+		var_dump($latest);
+		$latest_id = $latest->ID;
+		if ( !is_paged() && is_home() && has_post_thumbnail( $latest_id ) ) {
+			echo great_outdoors_responsive_insert_header_image(get_post_thumbnail_id( $latest_id ));
+		}
+		?>
