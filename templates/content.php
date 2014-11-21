@@ -44,6 +44,7 @@
 		</header><!-- .entry-header -->
 
 		<?php
+		// Show the full post if this is the blog index page and the newest post
 		if ( $wp_query->current_post == 0 && !is_paged() && is_home() ) {
 			echo '<div class="entry-content">';
 			the_content( __('', 'great-outdoors') );

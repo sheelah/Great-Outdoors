@@ -82,3 +82,24 @@ if ( ! function_exists( 'great_outdoors_responsive_editor_filter' ) ) :
 endif;
 add_filter('image_send_to_editor', 'great_outdoors_responsive_editor_filter', 10, 9);
 
+if ( ! function_exists( 'great_outdoors_add_featured_image_body_class' ) ) :
+	/**
+	 * Add body class for featured images if a post thumbnail is available for a post
+	 *
+	 * @param $classes
+	 * @return array
+	 */
+function great_outdoors_add_featured_image_body_class( $classes ) {
+	global $post;
+	if ( isset ( $post->ID ) ) {
+		if ( is_singular( array( 'post', 'page' ) ) || ( !is_paged() && is_home() ) ) {
+			if ( has_post_thumbnail( $post->ID ) ) {
+				$classes[] = 'has-featured-image';
+			}
+		}
+	}
+	return $classes;
+}
+endif;
+add_filter( 'body_class', 'great_outdoors_add_featured_image_body_class' );
+
