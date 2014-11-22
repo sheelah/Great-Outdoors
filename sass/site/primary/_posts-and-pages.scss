@@ -46,7 +46,13 @@ article {
 }
 
 .has-featured-image #content {
-	margin-top: 25em;
+	margin-top: 20em;
+	@media #{$medium} {
+		margin-top: 25em;
+	}
+	@media #{$large} {
+		margin-top: 30em;
+	}
 }
 
 #page {
@@ -126,40 +132,25 @@ article {
 	}
 }
 
-.featured-image + .row {
-	position: relative;
-	z-index: 10;
-	bottom: 100px;
-	width: 100%;
-	height: 100%;
-	margin-top: 65%;
-	@media only screen and (min-width: 25em) {
-		margin-top: 35%;
-	}
-	#secondary {
-		// Move sidebar down to accomodate featured image if sidebar is enabled
-		padding-top: 9em;
-	}
-}
-
-.single .has-post-thumbnail .entry-header,
-.page .has-post-thumbnail .entry-header {
+.has-featured-image .entry-header {
 	position: absolute;
-	top: -100px;
+	top: -250px;
 	color: $white;
 	@media only screen and (min-width: 25em) {
-		top: -40px;
+		top: -220px;
 	}
 	@media only screen and (min-width: 31.25em) {
-		top: -80px;
+		top: -180px;
 	}
 	@media #{$medium} {
-		max-width: 75%;
-		top: -100px;
+		max-width: 85%;
+		top: -200px;
+	}
+	@media only screen and (min-width: 50em) {
+		top: -300px;
 	}
 	@media #{$large} {
 		max-width: 70%;
-		top: -180px;
 	}
 	@media #{$xlarge-up} {
 		max-width: 65%;
@@ -171,9 +162,8 @@ article {
 	}
 }
 
-.single .has-post-thumbnail .entry-title,
-.page .has-post-thumbnail .entry-title {
-	font-size: rem-calc(22);
+.has-featured-image .entry-title {
+	font-size: rem-calc(26);
 	color: #fff;
 	@media #{$medium} {
 		font-size: rem-calc(40);
@@ -183,11 +173,9 @@ article {
 	}
 }
 
-.single .has-post-thumbnail .entry-content,
-.page .has-post-thumbnail .entry-content {
-	margin-top: 8em;
-	@media #{$large-up} {
-		margin-top: 10em;
+.has-featured-image .entry-content {
+	@media only screen and (min-width: 32em) {
+		padding-top: 4em;
 	}
 }
 

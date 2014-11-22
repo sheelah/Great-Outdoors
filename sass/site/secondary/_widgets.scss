@@ -20,6 +20,11 @@
 	padding-top: 1em;
 }
 
+.has-featured-image #secondary {
+	// Move sidebar down to accomodate featured image if sidebar is enabled
+	padding-top: 7em;
+}
+
 #secondary aside {
 	@media #{$medium-up} {
 		margin-left: 0.5em;
