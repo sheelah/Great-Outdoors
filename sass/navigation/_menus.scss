@@ -84,6 +84,7 @@
 	overflow: hidden;
 	border-bottom: 1px solid $gainsboro;
 	font-family: $header-font-family;
+	padding-bottom: 2.2em;
 }
 
 .site-main .post-navigation a,
@@ -131,8 +132,8 @@ nav .paging-navigation {
 	.current {
 		font-weight: bold;
 	}
+}
 
 a.page-numbers {
 	font-weight: normal;
-}
 }

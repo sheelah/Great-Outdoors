@@ -132,7 +132,7 @@ article {
 	}
 }
 
-.has-featured-image .entry-header {
+.has-featured-image article:nth-of-type(1) .entry-header {
 	position: absolute;
 	top: -250px;
 	color: $white;
@@ -162,9 +162,9 @@ article {
 	}
 }
 
-.has-featured-image .entry-title {
+.has-featured-image article:nth-of-type(1) .entry-title {
 	font-size: rem-calc(26);
-	color: #fff;
+	color: $white;
 	@media #{$medium} {
 		font-size: rem-calc(40);
 	}
@@ -173,7 +173,7 @@ article {
 	}
 }
 
-.has-featured-image .entry-content {
+.has-featured-image article:nth-of-type(1) .entry-content {
 	@media only screen and (min-width: 32em) {
 		padding-top: 4em;
 	}

@@ -53,3 +53,13 @@ a.more-link {
 .edit-link {
 	margin-left: 0.3em;
 }
+
+.has-featured-image article:nth-of-type(1) .entry-title {
+	a:link,
+	a:hover,
+	a:focus,
+	a:active,
+	a:visited {
+		color: $white;
+	}
+}
