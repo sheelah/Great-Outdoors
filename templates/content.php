@@ -6,17 +6,17 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('index-post-listing'); ?>>
 
-	<div class="hide-for-small-only medium-4 large-3 large-push-1 columns">
 	<?php
 	// Show the full post if this is the blog index page and the newest post
 	if ( $wp_query->current_post == 0 && !is_paged() && is_home() ) {
 		if ( has_post_thumbnail() ) {
+			echo '<div class="medium-4 large-3 large-push-1 columns">';
 			echo great_outdoors_responsive_insert_header_image( get_post_thumbnail_id ($post->ID ) );
 		}
-
 	}
 	else {
-		if (has_post_thumbnail()) {
+		echo '<div class="hide-for-small-only medium-4 large-3 large-push-1 columns">';
+		if ( has_post_thumbnail() ) {
 			echo '<a href="' . get_permalink() . '" title="' . __('Click to read ', 'great-outdoors') . get_the_title()
 				. '" rel="bookmark">';
 			echo the_post_thumbnail('thumbnail', 'class=index-thumbnail-image');
