@@ -3,9 +3,13 @@
 }
 
 .hentry {
-	margin: 0 0 2em;
+	margin: 1em 0 2em;
 	padding-bottom: 2em;
 	border-bottom: 1px solid $gainsboro;
+}
+
+.has-featured-image .hentry {
+	margin: 0 0 2em;
 }
 
 .byline,
@@ -41,7 +45,7 @@ article {
 
 #content {
 	margin-top: 2em;
-	margin-bottom: 2em;
+	padding-bottom: 2em;
 	background: $white;
 }
 
