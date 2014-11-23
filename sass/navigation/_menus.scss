@@ -84,7 +84,10 @@
 	overflow: hidden;
 	border-bottom: 1px solid $gainsboro;
 	font-family: $header-font-family;
-	padding-bottom: 2.2em;
+}
+
+.site-main .post-navigation {
+	padding: 2em 0;
 }
 
 .site-main .post-navigation a,

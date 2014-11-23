@@ -47,9 +47,12 @@ ol.children {
 	}
 }
 
-#comment-nav-above,
-#comment-nav-below {
+#comment-nav-above {
 	border-bottom: none;
+}
+
+#comment-nav-below {
+	padding-bottom: 2em;
 }
 
 .comment-meta {
