@@ -9,7 +9,11 @@
 }
 
 .has-featured-image .hentry {
-	margin: 0;
+	margin-top: 2em;
+}
+
+.has-featured-image .hentry:nth-of-type(1) {
+	margin-top: 0;
 }
 
 .byline,
