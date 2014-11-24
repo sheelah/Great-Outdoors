@@ -69,7 +69,8 @@ article {
 
 .category-list,
 .entry-meta,
-.entry-footer {
+.entry-footer,
+.taxonomy-description p {
 	font-size: rem-calc(16);
 	font-family: $header-font;
 	font-weight: bold;
