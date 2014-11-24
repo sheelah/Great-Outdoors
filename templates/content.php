@@ -7,8 +7,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('index-post-listing'); ?>>
 
 	<?php
-	// Show the full post if this is the blog index page and the newest post
 	if ( $wp_query->current_post == 0 && !is_paged() && is_home() ) {
+		// Show the full-width post thumbnail if this is the blog index page and the newest post
 		if ( has_post_thumbnail() ) {
 			echo '<div class="medium-4 large-3 large-push-1 columns">';
 			echo great_outdoors_responsive_insert_header_image( get_post_thumbnail_id ($post->ID ) );
@@ -16,6 +16,7 @@
 	}
 	else {
 		echo '<div class="hide-for-small-only medium-4 large-3 large-push-1 columns">';
+		// Show just the small post thumbnail for other posts on the blog index page
 		if ( has_post_thumbnail() ) {
 			echo '<a href="' . get_permalink() . '" title="' . __('Click to read ', 'great-outdoors') . get_the_title()
 				. '" rel="bookmark">';
@@ -54,8 +55,8 @@
 		</header><!-- .entry-header -->
 
 		<?php
-		// Show the full post if this is the blog index page and the newest post
 		if ( $wp_query->current_post == 0 && !is_paged() && is_home() ) {
+			// Show the full post up to more tag if this is the blog index page and the newest post
 			echo '<div class="entry-content">';
 			the_content( __('', 'great-outdoors') );
 			echo '</div>';

@@ -155,13 +155,13 @@ article {
 		top: -200px;
 	}
 	@media only screen and (min-width: 50em) {
-		top: -300px;
+		top: -350px;
 	}
 	@media #{$large} {
 		max-width: 70%;
 	}
 	@media #{$xlarge-up} {
-		max-width: 65%;
+		max-width: 85%;
 		top: -250px;
 	}
 	.entry-meta a,
