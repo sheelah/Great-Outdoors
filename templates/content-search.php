@@ -24,6 +24,6 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php great_outdoors_entry_footer(); ?>
+		<?php great_outdoors_custom_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

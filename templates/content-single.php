@@ -28,20 +28,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php
-		/* translators: used between list items, there is a space after the comma */
-		$category_list = get_the_category_list(__(', ', 'great-outdoors'));
-
-		if (great_outdoors_categorized_blog()) {
-			echo '<div class="category-list">' . '<i class="fa fa-folder-open"></i>' . $category_list . '</div>';
-		}
-		?>
-
-		<div class="tag-list">
-		<?php
-		echo get_the_tag_list('<i class="fa fa-tag"></i>', ', ', '');
-		?>
-		</div><!-- .tag-list -->
-		<?php edit_post_link( __( 'Edit', 'great-outdoors' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php great_outdoors_custom_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

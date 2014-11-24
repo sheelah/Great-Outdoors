@@ -145,6 +145,26 @@ function great_outdoors_entry_footer() {
 }
 endif;
 
+if ( ! function_exists( 'great_outdoors_custom_entry_footer' ) ) :
+/**
+ * Prints HTML with meta information and icons for the categories and tags.
+ */
+function great_outdoors_custom_entry_footer() {
+	$category_list = get_the_category_list(__(', ', 'great-outdoors'));
+	// Print categories
+	if (great_outdoors_categorized_blog() && $category_list ) {
+		echo '<div class="category-list">' . '<i class="fa fa-folder-open"></i>' . $category_list . '</div>';
+	}
+
+    // Print tags
+	echo '<div class="tag-list">';
+	echo get_the_tag_list('<i class="fa fa-tag"></i>', ', ', '');
+	echo '</div><!-- .tag-list -->';
+
+	edit_post_link( __( 'Edit', 'great-outdoors' ), '<span class="edit-link">', '</span>' );
+}
+endif;
+
 /**
  * Returns true if a blog has more than 1 category.
  *
