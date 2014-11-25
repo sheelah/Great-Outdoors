@@ -20,4 +20,15 @@ Description: Used to style the GUI content editor in posts and pages.
 html .mceContentBody {
 	max-width: 700px;
 	margin: 0 1em;
+	height: 100%;
 }
+
+img {
+	display: inherit;
+	vertical-align: inherit;
+}
+
+html {
+	height: auto;
+}
+
