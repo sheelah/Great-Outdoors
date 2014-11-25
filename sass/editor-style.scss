@@ -1,0 +1,23 @@
+/*!
+Theme Name: Great Outdoors
+Description: Used to style the GUI content editor in posts and pages.
+*/
+
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+@import "foundation/app";
+@import "typography/typography";
+@import "elements/elements";
+@import "modules/alignments";
+@import "modules/clearings";
+@import "navigation/navigation";
+@import "site/site";
+@import "media/media";
+
+
+/* =Body
+----------------------------------------------- */
+html .mceContentBody {
+	max-width: 700px;
+	margin: 0 1em;
+}

@@ -65,12 +65,12 @@
 		$latest_posts_query = new WP_Query($args);
 
 		// The Loop
-		if ($latest_posts_query->have_posts()) {
-			while ($latest_posts_query->have_posts()) {
+		if ( $latest_posts_query->have_posts() ) {
+			while ( $latest_posts_query->have_posts() ) {
 
 				$latest_posts_query->the_post();
 				// Get the standard index page content
-				get_template_part('templates/content', get_post_format());
+				get_template_part( 'templates/content', get_post_format() );
 			}
 		}
 		/* Restore original Post Data */

@@ -80,3 +80,5 @@ function great_outdoors_enforce_image_size_options() {
 endif;
 add_action( 'switch_theme', 'great_outdoors_enforce_image_size_options' );
 
+
+

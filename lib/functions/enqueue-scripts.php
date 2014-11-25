@@ -33,3 +33,15 @@ if ( ! function_exists( 'great_outdoors_scripts' ) ) :
     }
 endif; // great_outdoor_scripts
 add_action( 'wp_enqueue_scripts', 'great_outdoors_scripts' );
+
+if ( ! function_exists( 'great_outdoors_enqueue_editor_styles') ) :
+	function great_outdoors_enqueue_editor_styles() {
+		// This theme styles the visual editor to resemble the theme style.
+		$font_base_url = '//fonts.googleapis.com/css';
+		$font_query = '?family=Open+Sans:400,700,800,400italic,700italic,800italic|PT+Serif:400,700,400italic,700italic|Roboto+Slab:400|Oswald:400,700';
+	    $font_url = $font_base_url . $font_query;
+	    add_editor_style( array( 'editor-style.css', str_replace( ',', '%2C', $font_url ) ) );
+	}
+endif;
+add_action( 'after_setup_theme', 'great_outdoors_enqueue_editor_styles');
+
