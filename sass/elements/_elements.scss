@@ -16,4 +16,9 @@ figure {
 	margin: 0;
 }
 
+::selection {
+	background: #555;
+	color: #fff;
+}
+
 @import "tables";
