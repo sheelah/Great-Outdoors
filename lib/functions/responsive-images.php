@@ -5,13 +5,13 @@
  */
 
 if ( ! function_exists( 'great_outdoors_get_image_sizes' ) ) :
-	function great_outdoors_get_image_sizes( $image ) {
+	function great_outdoors_get_image_sizes( $attachment_id ) {
 		$sizes = array( 'small-thumb', 'medium', 'large' );
 		$arr = array();
-		$get_sizes = wp_get_attachment_metadata( $image );
+		$get_sizes = wp_get_attachment_metadata( $attachment_id );
 
-		foreach($sizes as $size) {
-			$image_src = wp_get_attachment_image_src( $image, $size );
+		foreach( $sizes as $size ) {
+			$image_src = wp_get_attachment_image_src( $attachment_id, $size );
 
 			if ( array_key_exists( $size, $get_sizes['sizes'] ) ) {
 				$image_width = $get_sizes['sizes'][$size]['width'];
@@ -24,40 +24,52 @@ if ( ! function_exists( 'great_outdoors_get_image_sizes' ) ) :
 endif;
 
 if ( ! function_exists( 'great_outdoors_image_alt' ) ) :
-	function great_outdoors_get_img_alt( $image ) {
-		$img_alt = trim( strip_tags( get_post_meta( $image, '_wp_attachment_image_alt', true ) ) );
-	return $img_alt;
+	function great_outdoors_get_img_alt( $attachment_id ) {
+		$alt_text = trim( strip_tags( get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ) );
+		if ( ! $alt_text ) {
+			// Use image title instead if image alt isn't set for an image
+			$alt_text = esc_html( get_the_title($attachment_id) );
+		}
+		return $alt_text;
 	}
 endif;
 
 
 if ( ! function_exists( 'great_outdoors_responsive_insert_header_image' ) ) :
-	function great_outdoors_responsive_insert_header_image( $image ) {
-		$srcsets = great_outdoors_get_image_sizes( $image );
+	function great_outdoors_responsive_insert_header_image( $post_id ) {
+		$attachment_id = get_post_thumbnail_id( $post_id );
+		$srcsets = great_outdoors_get_image_sizes( $attachment_id );
 
 		return
 		'<div class="featured-image">'
 		. '<div class="gradient-overlay">'
     	. '<img sizes="100vw" srcset="'
 		. $srcsets . '" alt="'
-		. great_outdoors_get_img_alt( $image )
+		. great_outdoors_get_img_alt( $attachment_id )
 		. '"></div></div>';
 	}
 endif;
 
 if ( ! function_exists( 'great_outdoors_responsive_insert_image' ) ) :
+	/**
+	 * Use responsive images to display an image in a post or page.
+	 *
+	 * @param $atts
+	 * @return string
+	 */
 	function great_outdoors_responsive_insert_image( $atts ) {
 		extract( shortcode_atts( array(
 			'id'    => 1,
 			'caption' => ''
 		), $atts ) );
 
-		$srcsets = great_outdoors_get_image_sizes( $id );
+		$attachment_id = get_post_thumbnail_id( $post_id );
+		$srcsets = great_outdoors_get_image_sizes( $attachment_id );
 
 		return '<figure>
     	<img sizes="(min-width: 1400px) 50vw, 100vw" srcset="'
 		. $srcsets . '" alt="'
-		. great_outdoors_get_img_alt($id) . '">
+		. great_outdoors_get_img_alt( $attachment_id ) . '">
     	<figcaption class="et_pb_text et_pb_text_align_center">' . $caption . '</figcaption></figure>';
 
 	}
@@ -84,7 +96,7 @@ add_filter('image_send_to_editor', 'great_outdoors_responsive_editor_filter', 10
 
 if ( ! function_exists( 'great_outdoors_add_featured_image_body_class' ) ) :
 	/**
-	 * Add body class for featured images if a post thumbnail is available for a post
+	 * Add body class for featured images if a post thumbnail is available for a post.
 	 *
 	 * @param $classes
 	 * @return array

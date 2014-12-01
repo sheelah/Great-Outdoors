@@ -11,7 +11,7 @@
 		// Show the full-width post thumbnail if this is the blog index page and the newest post
 		if ( has_post_thumbnail() ) {
 			echo '<div class="medium-4 large-3 large-push-1 columns">';
-			echo great_outdoors_responsive_insert_header_image( get_post_thumbnail_id ($post->ID ) );
+			echo great_outdoors_responsive_insert_header_image( $post->ID );
 		}
 	}
 	else {
