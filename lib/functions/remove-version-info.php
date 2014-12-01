@@ -1,6 +1,6 @@
 <?php
 /**
- * Remove version information from page header and RSS feeds.
+ * Remove version information from page head and RSS feeds.
  */
 if ( ! function_exists( 'great_outdoors_remove_version_info' ) ) :
 	function great_outdoors_remove_version_info() {
