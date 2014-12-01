@@ -63,13 +63,12 @@ if ( ! function_exists( 'great_outdoors_responsive_insert_image' ) ) :
 			'caption' => ''
 		), $atts ) );
 
-		$attachment_id = get_post_thumbnail_id( $post_id );
-		$srcsets = great_outdoors_get_image_sizes( $attachment_id );
+		$srcsets = great_outdoors_get_image_sizes( $id );
 
 		return '<figure>
-    	<img sizes="(min-width: 1400px) 50vw, 100vw" srcset="'
+    	<img sizes="(min-width: 1200px) 70vw, 100vw" srcset="'
 		. $srcsets . '" alt="'
-		. great_outdoors_get_img_alt( $attachment_id ) . '">
+		. great_outdoors_get_img_alt( $id ) . '">
     	<figcaption class="et_pb_text et_pb_text_align_center">' . $caption . '</figcaption></figure>';
 
 	}
@@ -78,7 +77,8 @@ add_shortcode( 'resp_image', 'great_outdoors_responsive_insert_image' );
 
 if ( ! function_exists( 'great_outdoors_responsive_editor_filter' ) ) :
 	/**
-	 * Filter out the media editor output to insert our created shortcode instead.
+	 * Filter out the media editor output to insert our created shortcode instead. This
+	 * will also get the media editor to include the image ID.
 	 *
 	 * @param $html
 	 * @param $id
