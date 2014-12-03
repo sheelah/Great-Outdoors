@@ -38,6 +38,9 @@ require get_template_directory() . '/inc/customizer.php';
 // Add theme support
 require_once( 'lib/functions/theme-support.php' );
 
+// Add SVG support
+require_once( 'lib/functions/svg-support.php' );
+
 // Remove version number from page head and RSS feeds
 require_once( 'lib/functions/remove-version-info.php' );
 
