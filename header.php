@@ -28,8 +28,9 @@
 					<li class="name">
 						<h1>
 							<a href="<?php echo esc_url( home_url( '/ ') ); ?>">
-								<img class="logo" src="<?php echo content_url(); ?>/uploads/2014/12/upwardtraj_logo1.svg">
-								<?php bloginfo('name'); ?></a></h1>
+								<img class="logo" src="<?php bloginfo('template_directory'); ?>/images/logo.svg">
+							</a>
+						</h1>
 					</li>
 					<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
 				</ul>
