@@ -1440,7 +1440,9 @@ $topbar-link-font-family: $top-nav-link-font;
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
 // Using rem-calc for the below breakpoint causes issues with top bar
+$topbar-breakpoint: (865px) !default; // Change to 9999px for always mobile layout
 // $topbar-breakpoint: #{lower-bound($medium-range)}; // Change to 9999px for always mobile layout
+$topbar-media-query: "only screen and (min-width: #{$topbar-breakpoint})" !default;
 // $topbar-media-query: $medium-up;
 
 // Divider Styles
