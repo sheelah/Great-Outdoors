@@ -143,19 +143,16 @@ article {
 
 .has-featured-image article:nth-of-type(1) .entry-header {
 	position: absolute;
-	top: -250px;
+	top: -315px;
 	color: $white;
 	@media only screen and (min-width: 25em) {
-		top: -220px;
+		//top: -220px;
 	}
 	@media only screen and (min-width: 31.25em) {
-		top: -180px;
+		top: -280px;
 	}
 	@media #{$medium} {
 		max-width: 85%;
-		top: -200px;
-	}
-	@media only screen and (min-width: 50em) {
 		top: -350px;
 	}
 	@media #{$large} {

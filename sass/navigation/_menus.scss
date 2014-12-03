@@ -146,3 +146,9 @@ a.page-numbers {
 	display: block;
 	padding-top: 0.4em;
 }
+
+// Top bar mobile icon styles
+// Overrides Foundation default
+.top-bar .toggle-topbar.menu-icon {
+	margin-top: -20px;
+}
