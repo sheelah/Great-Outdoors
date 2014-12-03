@@ -80,5 +80,13 @@ function great_outdoors_enforce_image_size_options() {
 endif;
 add_action( 'switch_theme', 'great_outdoors_enforce_image_size_options' );
 
+if ( ! function_exists( 'great_outdoors_enable_svg_upload' ) ) :
+	function great_outdoors_enable_svg_upload( $mimes ) {
+		$mimes['svg'] = 'image/svg+xml';
+		return $mimes;
+	}
+endif;
+add_filter( 'upload_mimes', 'great_outdoors_enable_svg_upload' );
+
 
 
