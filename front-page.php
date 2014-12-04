@@ -7,17 +7,14 @@
 
 get_header(); ?>
 
-<div class="row" data-equalizer>
-	<div class="small-12 columns" data-equalizer-watch>
+<div class="row">
+	<div class="small-12 columns">
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
-
-				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php get_template_part( 'templates/content', 'page' ); ?>
-
-				<?php endwhile; // end of the loop. ?>
-
+				<header class="tagline">
+					<h1>Hiking Onwards and Upwards</h1>
+					<h2>A hiking blog for the San Francisco Bay Area and beyond</h2>
+				</header>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 	</div><!-- .columns -->

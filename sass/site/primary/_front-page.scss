@@ -1,0 +1,7 @@
+/* Styles specific to the front page template */
+
+.home {
+	background: #000 url(images/glacier.jpg) no-repeat center center fixed;
+	@include background-size(cover);
+	overflow: hidden;
+}
