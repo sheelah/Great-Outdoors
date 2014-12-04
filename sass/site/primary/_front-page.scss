@@ -3,10 +3,12 @@
 .home {
 	background: #000 url(images/glacier.jpg) no-repeat center center fixed;
 	@include background-size(cover);
+	position: relative;
 }
 
 .home #content {
 	background: transparent;
+	margin-top: 20em;
 }
 
 .tagline h1,
@@ -14,9 +16,24 @@
 	color: $white;
 }
 
-.tagline h1 {
-	text-transform: uppercase;
-	font-size: rem-calc(60);
-	font-weight: normal;
-	letter-spacing: 0.01em;
+.tagline {
+	h1 {
+		text-transform: uppercase;
+		font-weight: normal;
+		letter-spacing: 0.01em;
+	}
+	h2 {
+		font-family: "Roboto Slab", sans-serif;
+		max-width: 60%;
+		margin: 0 auto;
+		padding-top: 1em;
+	}
+}
+
+// Make sure footer stays put
+.home #colophon {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 }
