@@ -2,7 +2,8 @@
 footer#colophon {
 	background-color: $color__background-footer;
 	color: $color__text-footer;
-	padding: 1em;
+	// minimal padding since default footer has minimal content
+	padding: 0.2em 1em;
 	p {
 		font-family: $footer-font;
 		margin: 1em 0;

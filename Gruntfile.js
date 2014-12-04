@@ -65,6 +65,10 @@ module.exports = function(grunt) {
 	    src: 'js/customizer.js',
 	    dest: 'js/dist/customizer.min.js'
       },
+      stickyFooter: {
+        src: 'js/lib/sticky-footer.js',
+        dest: 'js/lib/sticky-footer.min.js'
+      },
       dist: {
         files: [
           {
@@ -81,6 +85,7 @@ module.exports = function(grunt) {
       dev: {
         files: [
           {src: ['js/customizer.js'], dest: 'js/dist/customizer.min.js'},
+          {src: ['js/lib/sticky-footer.js'], dest: 'js/lib/sticky-footer.min.js'},
         ]
       }
     },

@@ -12,7 +12,7 @@ get_header(); ?>
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 				<header class="tagline">
-					<h1>Hiking Onwards and Upwards</h1>
+					<h1>The mountains await</h1>
 					<h2>A hiking blog for the San Francisco Bay Area and beyond</h2>
 				</header>
 			</main><!-- #main -->

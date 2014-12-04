@@ -1,39 +1,56 @@
 /* Styles specific to the front page template */
 
 .home {
-	background: #000 url(images/glacier.jpg) no-repeat center center fixed;
+	@include background-image(linear-gradient(rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.3)),
+		url(images/glacier.jpg));
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
 	@include background-size(cover);
 	position: relative;
 }
 
 .home #content {
 	background: transparent;
-	margin-top: 20em;
-}
-
-.tagline h1,
-.tagline h2 {
-	color: $white;
+	margin-top: 10em;
+	@media #{$medium-up} {
+		margin-top: 20em;
+	}
 }
 
 .tagline {
+	text-align: center;
 	h1 {
-		text-transform: uppercase;
-		font-weight: normal;
-		letter-spacing: 0.01em;
+		color: $white;
+		text-transform: lowercase;
+		font-size: rem-calc(40);
+		font-weight: 700;
+		letter-spacing: -0.05em;
+		@media #{$small} {
+			font-size: rem-calc(45);
+		}
+		@media #{$medium} {
+			font-size: rem-calc(50);
+		}
+		@media #{$large-up} {
+			font-size: rem-calc(65);
+		}
 	}
 	h2 {
-		font-family: "Roboto Slab", sans-serif;
-		max-width: 60%;
+		color: $white;
+		font-size: rem-calc(16);
+		font-weight: normal;
+		max-width: 50%;
 		margin: 0 auto;
-		padding-top: 1em;
+		@media #{$small} {
+			font-size: rem-calc(18);
+		}
+		@media #{$medium} {
+			font-size: rem-calc(20);
+			padding: 0 50px;
+		}
+		@media #{$large-up} {
+			font-size: rem-calc(25);
+		}
 	}
-}
-
-// Make sure footer stays put
-.home #colophon {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
 }
