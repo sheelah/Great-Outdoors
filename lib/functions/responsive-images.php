@@ -7,7 +7,7 @@
 if ( ! function_exists( 'great_outdoors_get_image_sizes' ) ) :
 	function great_outdoors_get_image_sizes( $attachment_id ) {
 		$sizes = array( 'small-thumb', 'medium', 'large' );
-		$arr = array();
+		$image_sizes = array();
 		$get_sizes = wp_get_attachment_metadata( $attachment_id );
 
 		foreach( $sizes as $size ) {
@@ -15,11 +15,10 @@ if ( ! function_exists( 'great_outdoors_get_image_sizes' ) ) :
 
 			if ( array_key_exists( $size, $get_sizes['sizes'] ) ) {
 				$image_width = $get_sizes['sizes'][$size]['width'];
-				$arr[] = $image_src[0] . ' ' . $image_width . 'w';
+				$image_sizes[] = $image_src[0] . ' ' . $image_width . 'w';
 			}
 		}
-
-		return implode(', ', $arr);
+		return $image_sizes;
 	}
 endif;
 
@@ -34,18 +33,57 @@ if ( ! function_exists( 'great_outdoors_image_alt' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'great_outdoors_set_image_transient' ) ) :
+/**
+ * Create image transient to avoid looping through multiple image queries every time a post loads.
+ * Called any time a post is saved or updated right after existing transient is flushed.
+ * Also called when no transient is set.
+ *
+ * - Builds an array containing the alt text and image sizes for a given image
+ * - Sets a transient with the label "featured_image_[post_id] that expires in 12 months
+ */
+	function great_outdoors_set_image_transient($post_id, $srcsets, $alt_text) {
+		$thumbnails['image_sizes'] = $srcsets;
+		$thumbnails['alt_text'] = $alt_text;
+		set_transient( 'featured_image_' . $post_id, $thumbnails, 52 * WEEK_IN_SECONDS );
+	}
+endif;
+
+if ( ! function_exists( 'great_outdoors_reset_thumb_data_transient' ) ) :
+/**
+ * Reset featured image transient when the post is updated
+ */
+	function great_outdoors_reset_thumb_data_transient( $post_id ) {
+		delete_transient( 'featured_image_' . $post_id );
+		if ( has_post_thumbnail( $post_id ) ) {
+			$attachment_id = get_post_thumbnail_id( $post_id );
+			$srcsets = great_outdoors_get_image_sizes( $attachment_id );
+			$alt_text = great_outdoors_get_img_alt( $attachment_id );
+			great_outdoors_set_image_transient( $post_id, $srcsets, $alt_text );
+		}
+	}
+endif;
+add_action('save_post', 'great_outdoors_reset_thumb_data_transient');
+
 
 if ( ! function_exists( 'great_outdoors_responsive_insert_header_image' ) ) :
 	function great_outdoors_responsive_insert_header_image( $post_id ) {
-		$attachment_id = get_post_thumbnail_id( $post_id );
-		$srcsets = great_outdoors_get_image_sizes( $attachment_id );
+		// Check to see if there is a transient available. If there is, use it.
+		if ( false === ( $thumb_data = get_transient( 'featured_image_' . $post_id ) ) ) {
+			$attachment_id = get_post_thumbnail_id( $post_id );
+			$srcsets = great_outdoors_get_image_sizes( $attachment_id );
+			$alt_text = great_outdoors_get_img_alt( $attachment_id );
+			great_outdoors_set_image_transient( $post_id, $srcsets, $alt_text );
+		}
+		$thumbnail_data = get_transient( 'featured_image_' . $post_id );
+		$thumbs = implode(', ', $thumbnail_data['image_sizes']);
 
 		return
 		'<div class="featured-image">'
 		. '<div class="gradient-overlay">'
     	. '<img sizes="100vw" srcset="'
-		. $srcsets . '" alt="'
-		. great_outdoors_get_img_alt( $attachment_id )
+		. $thumbs . '" alt="'
+		. $thumbnail_data['alt_text']
 		. '"></div></div>';
 	}
 endif;
@@ -64,10 +102,11 @@ if ( ! function_exists( 'great_outdoors_responsive_insert_image' ) ) :
 		), $atts ) );
 
 		$srcsets = great_outdoors_get_image_sizes( $id );
+		$thumbs = implode(', ', $srcsets);
 
 		return '<figure>
     	<img sizes="(min-width: 1200px) 70vw, 100vw" srcset="'
-		. $srcsets . '" alt="'
+		. $thumbs . '" alt="'
 		. great_outdoors_get_img_alt( $id ) . '">
     	<figcaption class="et_pb_text et_pb_text_align_center">' . $caption . '</figcaption></figure>';
 
