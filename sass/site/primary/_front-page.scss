@@ -3,5 +3,20 @@
 .home {
 	background: #000 url(images/glacier.jpg) no-repeat center center fixed;
 	@include background-size(cover);
-	overflow: hidden;
+}
+
+.home #content {
+	background: transparent;
+}
+
+.tagline h1,
+.tagline h2 {
+	color: $white;
+}
+
+.tagline h1 {
+	text-transform: uppercase;
+	font-size: rem-calc(60);
+	font-weight: normal;
+	letter-spacing: 0.01em;
 }
