@@ -26,11 +26,13 @@
 		font-size: rem-calc(40);
 		font-weight: 700;
 		letter-spacing: -0.05em;
+		line-height: 1.2;
 		@media #{$small} {
 			font-size: rem-calc(45);
 		}
 		@media #{$medium} {
 			font-size: rem-calc(50);
+			line-height: 1.4;
 		}
 		@media #{$large-up} {
 			font-size: rem-calc(65);
@@ -40,14 +42,15 @@
 		color: $white;
 		font-size: rem-calc(16);
 		font-weight: normal;
-		max-width: 50%;
+		max-width: 60%;
 		margin: 0 auto;
+		padding-top: 0.5em;
 		@media #{$small} {
 			font-size: rem-calc(18);
 		}
 		@media #{$medium} {
 			font-size: rem-calc(20);
-			padding: 0 50px;
+			padding: 0.5em 3.125em 0;
 		}
 		@media #{$large-up} {
 			font-size: rem-calc(25);
