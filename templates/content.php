@@ -13,6 +13,9 @@
 			echo '<div class="medium-4 large-3 large-push-1 columns">';
 			echo great_outdoors_responsive_insert_header_image( $post->ID );
 		}
+		else {
+			echo '<div class="hide-for-small-only medium-4 large-3 large-push-1 columns">';
+		}
 	}
 	else {
 		echo '<div class="hide-for-small-only medium-4 large-3 large-push-1 columns">';
