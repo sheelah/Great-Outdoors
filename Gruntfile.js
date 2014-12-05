@@ -53,8 +53,8 @@ module.exports = function(grunt) {
         nonull: true,
       },
       js: {
-        src: ['js/*.js', '!js/customizer.js'],
-        dest: 'js/dist/greatoutdoors.min.js'
+        src: ['js/lib/sticky-footer.js', 'js/src/*.js', '!js/src/customizer.js'],
+        dest: 'js/greatoutdoors.min.js'
       }
 	},
     uglify: {
@@ -62,20 +62,16 @@ module.exports = function(grunt) {
         banner: '<%= banner %>'
       },
 	  customizer: {
-	    src: 'js/customizer.js',
-	    dest: 'js/dist/customizer.min.js'
-      },
-      stickyFooter: {
-        src: 'js/lib/sticky-footer.js',
-        dest: 'js/lib/sticky-footer.min.js'
+	    src: 'js/src/customizer.js',
+	    dest: 'js/customizer.min.js'
       },
       dist: {
         files: [
           {
             expand: true,
-            cwd: 'js/dist',
+            cwd: 'js',
             src: ['greatoutdoors.min.js'],
-            dest: 'js/dist',
+            dest: 'js',
             ext: '.min.js'
           },
         ]
@@ -84,8 +80,7 @@ module.exports = function(grunt) {
     copy: {
       dev: {
         files: [
-          {src: ['js/customizer.js'], dest: 'js/dist/customizer.min.js'},
-          {src: ['js/lib/sticky-footer.js'], dest: 'js/lib/sticky-footer.min.js'},
+          {src: ['js/src/customizer.js'], dest: 'js/customizer.min.js'},
         ]
       }
     },
