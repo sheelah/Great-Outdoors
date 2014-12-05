@@ -107,7 +107,7 @@ if ( ! function_exists( 'great_outdoors_responsive_insert_image' ) ) :
 		$thumbs = implode(', ', $srcsets);
 
 		return '<figure>
-    	<img sizes="(min-width: 1000px) 50vw, 100vw" srcset="'
+    	<img sizes="(min-width: 1000px) 65vw, 100vw" srcset="'
 		. $thumbs . '" alt="'
 		. great_outdoors_get_img_alt( $id ) . '">
     	<figcaption class="et_pb_text et_pb_text_align_center">' . $caption . '</figcaption></figure>';
