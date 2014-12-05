@@ -5,6 +5,8 @@
 	display: none;
 }
 
-#submit {
+// For comment submission and contact form buttons
+#submit, #send {
 	@include button($radius: true);
 }
+
