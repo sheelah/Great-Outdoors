@@ -115,7 +115,7 @@ if ( ! function_exists( 'great_outdoors_responsive_insert_image' ) ) :
 		$alignment = 'align'.$align;
 
 		return '<figure class=' . '"' . 'wp-caption ' . $alignment . '"' . '>'
-    	. '<img sizes="(min-width: 1000px) 60vw, 100vw"'
+    	. '<img class="wp-image" sizes="(min-width: 1000px) 60vw, 100vw"'
 		. 'srcset="'
 		. $thumbs . '" alt="'
 		. great_outdoors_get_img_alt( $id ) . '">
