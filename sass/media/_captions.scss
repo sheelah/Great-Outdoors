@@ -5,8 +5,7 @@
 	margin-bottom: 3em;
 	max-width: 100%;
 
-	img[class*="wp-image-"],
-	.wp-image {
+	img[class*="wp-image-"] {
 		@include center-block;
 	}
 }
