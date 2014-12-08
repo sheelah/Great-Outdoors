@@ -146,7 +146,7 @@ article {
 
 .has-featured-image article:nth-of-type(1) .entry-header {
 	position: absolute;
-	top: -160px;
+	top: -140px;
 	color: $white;
 	@media only screen and (min-width: 35em) {
 		top: -120px;
@@ -170,7 +170,7 @@ article {
 }
 
 .has-featured-image article:nth-of-type(1) .entry-title {
-	font-size: rem-calc(24);
+	font-size: rem-calc(20);
 	color: $white;
 	@media #{$medium} {
 		font-size: rem-calc(30);
