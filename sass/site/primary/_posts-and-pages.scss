@@ -54,12 +54,9 @@ article {
 }
 
 .has-featured-image #content {
-	margin-top: 20em;
-	@media #{$medium} {
-		margin-top: 25em;
-	}
+	margin-top: 10em;
 	@media #{$large} {
-		margin-top: 30em;
+		margin-top: 20em;
 	}
 }
 
@@ -143,20 +140,18 @@ article {
 
 .has-featured-image article:nth-of-type(1) .entry-header {
 	position: absolute;
-	top: -315px;
+	top: -160px;
 	color: $white;
-	@media only screen and (min-width: 25em) {
-		//top: -220px;
-	}
-	@media only screen and (min-width: 31.25em) {
-		top: -280px;
+	@media only screen and (min-width: 35em) {
+		top: -120px;
 	}
 	@media #{$medium} {
 		max-width: 85%;
-		top: -350px;
+		top: -140px;
 	}
 	@media #{$large} {
 		max-width: 70%;
+		top: -280px;
 	}
 	@media #{$xlarge-up} {
 		max-width: 85%;
@@ -172,7 +167,7 @@ article {
 	font-size: rem-calc(26);
 	color: $white;
 	@media #{$medium} {
-		font-size: rem-calc(40);
+		font-size: rem-calc(30);
 	}
 	@media #{$large-up} {
 		font-size: rem-calc(46)
