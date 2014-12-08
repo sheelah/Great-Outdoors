@@ -55,8 +55,14 @@ article {
 
 .has-featured-image #content {
 	margin-top: 10em;
+	@media #{$medium} {
+		margin-top: 14em;
+	}
 	@media #{$large} {
-		margin-top: 20em;
+		margin-top: 25em;
+	}
+	@media only screen and (min-width: 78.75em) {
+		margin-top: 30em;
 	}
 }
 
@@ -175,8 +181,8 @@ article {
 }
 
 .has-featured-image article:nth-of-type(1) .entry-content {
-	@media only screen and (min-width: 32em) {
-		padding-top: 4em;
+	@media #{$medium} {
+		padding-top: 2em;
 	}
 }
 
