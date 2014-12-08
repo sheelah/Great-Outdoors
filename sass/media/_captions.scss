@@ -1,8 +1,9 @@
 .wp-caption {
-	margin-bottom: 1.5em;
+	margin: 3em 0;
 	max-width: 100%;
 
-	img[class*="wp-image-"] {
+	img[class*="wp-image-"],
+	.wp-image {
 		@include center-block;
 	}
 }
@@ -16,6 +17,6 @@
 
 figcaption {
 	font-family: $header-font-family;
-	margin-top: 0.5em;
+	margin: 0.5em 0 1em 0;
 }
 

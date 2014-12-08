@@ -6,18 +6,22 @@
 
 if ( ! function_exists( 'great_outdoors_get_image_sizes' ) ) :
 	function great_outdoors_get_image_sizes( $attachment_id ) {
-		$sizes = array( 'small-thumb', 'medium', 'large' );
+		$sizes = array( 'small-thumb', 'medium', 'large', 'full' );
 		$image_sizes = array();
 		$get_sizes = wp_get_attachment_metadata( $attachment_id );
+		$full_size_image_width = $get_sizes['width'];
 
 		foreach( $sizes as $size ) {
 			$image_src = wp_get_attachment_image_src( $attachment_id, $size );
 
 			if ( array_key_exists( $size, $get_sizes['sizes'] ) ) {
 				$image_width = $get_sizes['sizes'][$size]['width'];
-				$image_sizes[] = $image_src[0] . ' ' . $image_width . 'w';
+				$image_sizes[$size] = $image_src[0] . ' ' . $image_width . 'w';
 			}
 		}
+		// Add full-size image data to array as well
+		$full_size_image_src = wp_get_attachment_image_src( $attachment_id, 'full' )[0];
+		$image_sizes['full'] = $full_size_image_src . ' ' . $full_size_image_width . 'w';
 		return $image_sizes;
 	}
 endif;
@@ -76,6 +80,8 @@ if ( ! function_exists( 'great_outdoors_responsive_insert_header_image' ) ) :
 			great_outdoors_set_image_transient( $post_id, $srcsets, $alt_text );
 		}
 		$thumbnail_data = get_transient( 'featured_image_' . $post_id );
+		// Remove full size image since it's only for use inside posts
+		unset($thumbnail_data['image_sizes']['full']);
 		$thumbs = implode(', ', $thumbnail_data['image_sizes']);
 
 		return
@@ -98,19 +104,22 @@ if ( ! function_exists( 'great_outdoors_responsive_insert_image' ) ) :
 	function great_outdoors_responsive_insert_image( $atts ) {
 		extract( shortcode_atts( array(
 			'id'    => 1,
-			'caption' => ''
+			'caption' => '',
+			'align' => 'none'
 		), $atts ) );
 
 		$srcsets = great_outdoors_get_image_sizes( $id );
 		// Remove largest thumb since it's reserved for featured images
-		unset($srcsets[2]);
+		unset($srcsets['large']);
 		$thumbs = implode(', ', $srcsets);
+		$alignment = 'align'.$align;
 
-		return '<figure>
-    	<img sizes="(min-width: 1000px) 55vw, 100vw" srcset="'
+		return '<figure class=' . '"' . 'wp-caption ' . $alignment . '"' . '>'
+    	. '<img class="wp-image" sizes="(min-width: 1000px) 50vw, 100vw"'
+		. 'srcset="'
 		. $thumbs . '" alt="'
 		. great_outdoors_get_img_alt( $id ) . '">
-    	<figcaption class="et_pb_text et_pb_text_align_center">' . $caption . '</figcaption></figure>';
+    	<figcaption class="wp-caption-text">' . $caption . '</figcaption></figure>';
 
 	}
 endif;
@@ -130,7 +139,7 @@ if ( ! function_exists( 'great_outdoors_responsive_editor_filter' ) ) :
 	 * @return string
 	 */
 	function great_outdoors_responsive_editor_filter($html, $id, $caption, $title, $align, $url) {
-		return "[resp_image id='$id' caption='" . $caption . "' ]";
+		return "[resp_image id='$id' align='$align' caption='" . $caption . "' ]";
 	}
 endif;
 add_filter('image_send_to_editor', 'great_outdoors_responsive_editor_filter', 10, 9);
