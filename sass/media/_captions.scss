@@ -1,5 +1,8 @@
 .wp-caption {
-	margin: 3em 0;
+	// Leave right and left margin empty so .alignleft and .alignright
+	// classes can define it
+	margin-top: 3em;
+	margin-bottom: 3em;
 	max-width: 100%;
 
 	img[class*="wp-image-"],
