@@ -42,6 +42,22 @@ article {
 	margin: 1.5em 0 0;
 }
 
+// Adjustments for aiming for 75 characters per line for maximum readability
+.page .entry-content,
+.single .entry-content {
+	@media only screen and (min-width: 53.125em) {
+		max-width: 90%;
+		margin: 1.5 auto 0 auto;
+	}
+	@media only screen and (min-width: 56.25em) {
+		max-width: 80%;
+		p {
+			font-size: 22px;
+			line-height: 1.7;
+		}
+	}
+}
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
