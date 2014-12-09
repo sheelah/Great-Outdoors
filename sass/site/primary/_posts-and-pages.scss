@@ -43,11 +43,11 @@ article {
 }
 
 // Adjustments for aiming for 75 characters per line for maximum readability
-.page .entry-content,
-.single .entry-content {
+.page #primary,
+.single #primary {
 	@media only screen and (min-width: 53.125em) {
 		max-width: 90%;
-		margin: 1.5em auto 0 auto;
+		margin: 0 auto;
 	}
 	@media only screen and (min-width: 56.25em) {
 		max-width: 80%;
