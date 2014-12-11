@@ -53,6 +53,9 @@ require_once( 'lib/functions/remove-sticky-class.php' );
 // Enqueue scripts and styles
 require_once( 'lib/functions/enqueue-scripts.php' );
 
+// Dequeue unneeded styles
+require_once( 'lib/functions/dequeue-styles.php' );
+
 // Register all navigation menus
 require_once( 'lib/functions/foundation-topbar-menu.php' );
 
