@@ -23,27 +23,16 @@ module.exports = function(grunt) {
     compass: {
       dist: {
         options: {
-            sassDir: 'sass',
-            cssDir: '.',
-            imagesDir: 'images',
-            generatedImagesDir: 'images',
-            javascriptsDir: 'js',
-            outputStyle: 'compressed',
-            force: true,
-			importPath: 'bower_components/foundation/scss'
+          sassDir: 'sass',
+          cssDir: '.',
+          imagesDir: 'images',
+          generatedImagesDir: 'images',
+          javascriptsDir: 'js',
+          outputStyle: 'compressed',
+          force: true,
+          importPath: 'bower_components/foundation/scss',
+          sourcemap: true
         }
-      },
-      dev: {
-          options: {
-              sassDir: 'sass',
-              cssDir: '.',
-              imagesDir: 'images',
-              generatedImagesDir: 'images',
-              javascriptsDir: 'js',
-              outputStyle: 'expanded',
-              force: true,
-              importPath: 'bower_components/foundation/scss'
-          }
       }
     },
     concat: {
@@ -159,7 +148,7 @@ module.exports = function(grunt) {
       },
       sass: {
         files: ['sass/**/*.scss'],
-        tasks: ['compass:dev'],
+        tasks: ['compass:dist'],
       },
       js: {
         files: ['js/*.js'],
