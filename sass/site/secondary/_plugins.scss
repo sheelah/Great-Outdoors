@@ -1,0 +1,60 @@
+/* Custom styles for plugins */
+
+/* YARP Plugin */
+.yarpp-related {
+	margin: 1em 0 !important;
+}
+
+.yarpp-related a {
+	text-decoration: none !important;
+	font-weight: bold !important;
+	font-family: $header-font;
+}
+
+.yarpp-related .yarpp-thumbnail-title{
+	text-align: left !important;
+	font-weight: bold !important;
+	font-size: 96% !important;
+	text-decoration: none !important;
+	font-family: $header-font;
+}
+
+/* YARP Plugin - thumbnail mode */
+.yarpp-thumbnails-horizontal .yarpp-thumbnail, .yarpp-thumbnail-default, .yarpp-thumbnail-title {
+	display: inline-block;
+	*display: inline;
+}
+.yarpp-thumbnails-horizontal .yarpp-thumbnail {
+	width: 130px;
+	height: 170px;
+	margin: 5px;
+	margin-left: 0px;
+	vertical-align: top;
+}
+.yarpp-thumbnail > img, .yarpp-thumbnail-default {
+	width: 120px;
+	height: 120px;
+	margin: 5px;
+}
+.yarpp-thumbnails-horizontal .yarpp-thumbnail > img, .yarpp-thumbnails-horizontal .yarpp-thumbnail-default {
+	display: block;
+}
+.yarpp-thumbnails-horizontal .yarpp-thumbnail-title {
+	font-size: 1em;
+	font-family: $header-font;
+	max-height: 2.8em;
+	line-height: 1.4em;
+	margin: 7px;
+	margin-top: 0px;
+	width: 120px;
+	text-decoration: inherit;
+	overflow: hidden;
+}
+
+.yarpp-thumbnail-default {
+	overflow: hidden;
+}
+.yarpp-thumbnail-default > img {
+	min-height: 120px;
+	min-width: 120px;
+}
