@@ -52,7 +52,6 @@ function foundation_top_bar_r() {
 	));
 }
 
-add_filter( 'wp_nav_menu_items', 'great_outdoors_custom_menu_item', 10, 2 );
 function great_outdoors_custom_menu_item ( $items, $args ) {
 	if ($args->theme_location == 'top-bar-r') {
 		$items .= '<li class="search-toggle menu-item">';
@@ -63,3 +62,4 @@ function great_outdoors_custom_menu_item ( $items, $args ) {
 	}
 	return $items;
 }
+add_filter( 'wp_nav_menu_items', 'great_outdoors_custom_menu_item', 10, 2 );
