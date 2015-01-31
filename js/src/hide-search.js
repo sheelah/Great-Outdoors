@@ -7,6 +7,7 @@ jQuery(document).ready(function($) {
 	searchToggle.on('click', function() {
 		$("#search-container").slideToggle('medium', function() {
 			searchToggle.toggleClass('active');
+			$(".search-box .search-field").focus();
 		});
 	});
 });

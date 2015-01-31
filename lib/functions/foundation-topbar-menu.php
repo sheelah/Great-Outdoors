@@ -57,8 +57,9 @@ function great_outdoors_custom_menu_item ( $items, $args ) {
 	if ($args->theme_location == 'top-bar-r') {
 		$items .= '<li class="search-toggle menu-item">';
 		$items .= '		<i class="fa fa-search"></i>';
-		$items .= '		<a href="search-container" class="screen-reader-text"><?php _e( "Search", "great-outdoors" ); ?></a>';
-		$items .= '</li>';
+		$items .= '		<a href="#search-container" class="screen-reader-text">';
+		$items .= __( "Search", "great-outdoors" );
+		$items .= '</a></li>';
 	}
 	return $items;
 }
