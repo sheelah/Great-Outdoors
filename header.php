@@ -11,7 +11,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -29,7 +28,7 @@
 					<li class="name">
 						<h1>
 							<a href="<?php echo esc_url( home_url( '/ ') ); ?>">
-								<img class="logo" src="<?php bloginfo('template_directory'); ?>/images/logo.svg">
+								<img class="logo" src="<?php echo esc_url( get_template_directory_uri() . '/images/logo.svg' ); ?>">
 							</a>
 						</h1>
 					</li>

@@ -48,6 +48,14 @@ add_theme_support( 'custom-background', apply_filters( 'great_outdoors_custom_ba
 'default-color' => 'ffffff',
 'default-image' => '',
 ) ) );
+
+/*
+ * Let WordPress manage the document title.
+ * By adding theme support, we declare that this theme does not use a
+ * hard-coded <title> tag in the document head, and expect WordPress to
+ * provide it for us.
+ */
+add_theme_support( 'title-tag' );
 }
 endif; // great_outdoors_theme_support
 add_action( 'after_setup_theme', 'great_outdoors_theme_support' );
