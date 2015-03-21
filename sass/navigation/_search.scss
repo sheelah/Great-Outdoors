@@ -2,9 +2,13 @@
 .search-toggle {
 	color: #fff;
 	cursor: pointer;
+	padding-left: 8px;
 	&:hover,
 	&.active {
 		background: $topbar-link-bg-hover;
+	}
+	@media #{$topbar-media-query} {
+		padding-left: 0;
 	}
 }
 

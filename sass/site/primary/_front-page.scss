@@ -1,12 +1,12 @@
 /* Styles specific to the front page template */
 
 .home {
-	@include background-image(linear-gradient(rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.3)),
-		url(images/glacier.jpg));
+	background-image: linear-gradient(rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.3)),
+		url(images/glacier.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
-	@include background-size(cover);
+	background-size: cover;
 	position: relative;
 }
 

@@ -3,7 +3,7 @@
 }
 
 .gallery-item {
-	@include single-transition(background 0.3s);
+	transition: background 0.3s;
 	display: inline-block;
 	text-align: center;
 	width: 100%;

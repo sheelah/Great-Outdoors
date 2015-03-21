@@ -135,12 +135,6 @@ function great_outdoors_entry_footer() {
 		}
 	}
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'great-outdoors' ), __( '1 Comment', 'great-outdoors' ), __( '% Comments', 'great-outdoors' ) );
-		echo '</span>';
-	}
-
 	edit_post_link( __( 'Edit', 'great-outdoors' ), '<span class="edit-link">', '</span>' );
 }
 endif;
