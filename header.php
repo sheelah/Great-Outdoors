@@ -28,7 +28,7 @@
 					<li class="name">
 						<h1>
 							<a href="<?php echo esc_url( home_url( '/ ') ); ?>">
-								<img class="logo" src="<?php echo esc_url( get_template_directory_uri() . '/images/logo.svg' ); ?>">
+								<img class="logo" alt="Upward Trajectory" src="<?php echo esc_url( get_template_directory_uri() . '/images/logo.svg' ); ?>">
 							</a>
 						</h1>
 					</li>
