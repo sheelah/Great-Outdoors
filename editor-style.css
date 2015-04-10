@@ -3259,7 +3259,7 @@ th {
 a {
   color: #222; }
   a:visited {
-    color: purple; }
+    color: #222; }
   a:hover, a:focus, a:active {
     color: #222;
     text-decoration: underline; }
@@ -3633,24 +3633,25 @@ article:after {
 
 .tagline {
   text-align: center; }
-  .tagline h1 {
+  .tagline span {
     color: #FFFFFF;
     text-transform: lowercase;
     font-size: 2.5rem;
     font-weight: 700;
+    font-family: "Open Sans", Arial, sans-serif;
     letter-spacing: -0.05em;
     line-height: 1.2; }
     @media only screen and (min-width:40.063em) {
-      .tagline h1 {
+      .tagline span {
         font-size: 2.8125rem; } }
     @media only screen and (min-width:40.063em) {
-      .tagline h1 {
+      .tagline span {
         font-size: 3.125rem;
         line-height: 1.4; } }
     @media only screen and (min-width:64.063em) {
-      .tagline h1 {
+      .tagline span {
         font-size: 4.0625rem; } }
-  .tagline h2 {
+  .tagline h1 {
     color: #FFFFFF;
     font-size: 1rem;
     font-weight: normal;
@@ -3658,14 +3659,14 @@ article:after {
     margin: 0 auto;
     padding-top: 0.5em; }
     @media only screen and (min-width:40.063em) {
-      .tagline h2 {
+      .tagline h1 {
         font-size: 1.125rem; } }
     @media only screen and (min-width:40.063em) {
-      .tagline h2 {
+      .tagline h1 {
         font-size: 1.25rem;
         padding: 0.5em 3.125em 0; } }
     @media only screen and (min-width:64.063em) {
-      .tagline h2 {
+      .tagline h1 {
         font-size: 1.5625rem; } }
 
 /*--------------------------------------------------------------

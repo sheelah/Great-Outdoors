@@ -26,11 +26,9 @@
 			<nav class="top-bar" data-topbar role="navigation">
 				<ul class="title-area">
 					<li class="name">
-						<h1>
-							<a href="<?php echo esc_url( home_url( '/ ') ); ?>">
-								<img class="logo" alt="Upward Trajectory" src="<?php echo esc_url( get_template_directory_uri() . '/images/logo.svg' ); ?>">
-							</a>
-						</h1>
+						<a href="<?php echo esc_url( home_url( '/ ') ); ?>">
+							<img class="logo" alt="Upward Trajectory" src="<?php echo esc_url( get_template_directory_uri() . '/images/logo.svg' ); ?>">
+						</a>
 					</li>
 					<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
 				</ul>

@@ -20,11 +20,12 @@
 
 .tagline {
 	text-align: center;
-	h1 {
+	span {
 		color: $white;
 		text-transform: lowercase;
 		font-size: rem-calc(40);
 		font-weight: 700;
+		font-family: $header-font-family;
 		letter-spacing: -0.05em;
 		line-height: 1.2;
 		@media #{$small} {
@@ -38,7 +39,7 @@
 			font-size: rem-calc(65);
 		}
 	}
-	h2 {
+	h1 {
 		color: $white;
 		font-size: rem-calc(16);
 		font-weight: normal;
