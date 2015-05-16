@@ -3451,6 +3451,9 @@ i.fa-search {
   padding-bottom: 2em;
   border-bottom: 1px solid #DDDDDD; }
 
+.page .hentry {
+  border-bottom: none; }
+
 .has-featured-image .hentry {
   margin-top: 2em; }
 
