@@ -36,6 +36,19 @@ function great_outdoors_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'great_outdoors_scripts' );
 
+/**
+ * Enqueue Contact Form 7 Javascript on contact page
+ */
+function great_outdoors_enqueue_contact_form_js() {
+	if ( ! is_page( 'contact' ) ) {
+		return;
+	}
+	if ( function_exists( 'wpcf7_enqueue_scripts' ) ) {
+		wpcf7_enqueue_scripts();
+	}
+}
+add_action( 'wp_enqueue_scripts', 'great_outdoors_enqueue_contact_form_js' );
+
 // http://wordpress.stackexchange.com/a/12450
 function great_outdoors_jquery_local_fallback( $src, $handle = null ) {
 	static $add_jquery_fallback = false;
