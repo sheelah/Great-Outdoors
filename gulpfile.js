@@ -11,7 +11,6 @@ var jshint = require('gulp-jshint');
 var sourcemaps = require('gulp-sourcemaps');
 var stylish = require('jshint-stylish');
 var phplint = require('gulp-phplint');
-var newer = require('gulp-newer');
 var rename = require('gulp-rename');
 var size = require('gulp-size');
 var browserSync = require('browser-sync').create();
