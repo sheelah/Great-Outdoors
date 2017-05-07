@@ -61,7 +61,7 @@ gulp.task('js-customizer', function() {
 });
 
 gulp.task('phplint', function() {
-  gulp.src('**/*.php')
+  gulp.src(['**/*.php', '!node_modules/**/*'])
     .pipe(phplint())
 });
 
