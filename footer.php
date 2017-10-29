@@ -16,7 +16,7 @@
 		<div class="row">
 			<div class="small-12 columns">
 				<p class="text-center">
-					&copy; <?php echo date('Y'); ?> <a href="http://sheelahb.com">Sheelah Brennan</a>. All rights reserved.
+					&copy; <?php echo date('Y'); ?> <a href="https://sheelahb.com">Sheelah Brennan</a>. All rights reserved.
 				</p>
 			</div><!-- .columns -->
 		</div><!-- .row -->
